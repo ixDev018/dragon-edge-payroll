@@ -1,0 +1,12 @@
+[16-Oct-2025 15:16:06 UTC] PHP Warning:  hex2bin(): Input string must be hexadecimal string in C:\wamp64\www\payrollsystemcaps\register_finish.php on line 106
+[16-Oct-2025 15:16:06 UTC] PHP Stack trace:
+[16-Oct-2025 15:16:06 UTC] PHP   1. {main}() C:\wamp64\www\payrollsystemcaps\register_finish.php:0
+[16-Oct-2025 15:16:06 UTC] PHP   2. hex2bin($string = 'V±œ¿>µVÞy&+ð¸k\022(') C:\wamp64\www\payrollsystemcaps\register_finish.php:106
+[16-Oct-2025 15:44:11 UTC] PHP Warning:  hex2bin(): Input string must be hexadecimal string in C:\wamp64\www\payrollsystemcaps\register_finish.php on line 106
+[16-Oct-2025 15:44:11 UTC] PHP Stack trace:
+[16-Oct-2025 15:44:11 UTC] PHP   1. {main}() C:\wamp64\www\payrollsystemcaps\register_finish.php:0
+[16-Oct-2025 15:44:11 UTC] PHP   2. hex2bin($string = 'wkô\034Æ^}ê\000G7gn2‰º') C:\wamp64\www\payrollsystemcaps\register_finish.php:106
+[14-Nov-2025 14:58:52 Asia/Manila] PHP Warning:  hex2bin(): Input string must be hexadecimal string in C:\wamp64\www\payrollsystemcaps\register_finish.php on line 98
+[14-Nov-2025 14:58:52 Asia/Manila] PHP Stack trace:
+[14-Nov-2025 14:58:52 Asia/Manila] PHP   1. {main}() C:\wamp64\www\payrollsystemcaps\register_finish.php:0
+[14-Nov-2025 14:58:52 Asia/Manila] PHP   2. hex2bin($string = 'ì\022V³rQÌ\027¶j?Ýû¥i¼') C:\wamp64\www\payrollsystemcaps\register_finish.php:98

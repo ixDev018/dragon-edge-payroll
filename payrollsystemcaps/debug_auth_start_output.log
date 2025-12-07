@@ -1,0 +1,21 @@
+{
+    "publicKey": {
+        "timeout": 60000,
+        "challenge": "i21luNKQ6bgJlYVoKq0K2aweuCR6DrhEDpNN_xK59sc",
+        "userVerification": "preferred",
+        "rpId": "localhost",
+        "allowCredentials": [
+            {
+                "id": "d2v0HMZefeoARzdnbjKJug",
+                "transports": [
+                    "usb",
+                    "nfc",
+                    "ble",
+                    "hybrid",
+                    "internal"
+                ],
+                "type": "public-key"
+            }
+        ]
+    }
+}
