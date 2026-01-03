@@ -11,6 +11,15 @@ class ComposerStaticInitb2d1a78721a45cd44b66f611083bc506
         array (
             'lbuchs\\WebAuthn\\' => 16,
         ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+            'PhpMqtt\\Client\\' => 15,
+        ),
+        'M' => 
+        array (
+            'MyCLabs\\Enum\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -18,10 +27,23 @@ class ComposerStaticInitb2d1a78721a45cd44b66f611083bc506
         array (
             0 => __DIR__ . '/..' . '/lbuchs/webauthn/src',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'PhpMqtt\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mqtt/client/src',
+        ),
+        'MyCLabs\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Stringable' => __DIR__ . '/..' . '/myclabs/php-enum/stubs/Stringable.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

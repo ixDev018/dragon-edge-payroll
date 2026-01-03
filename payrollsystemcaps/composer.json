@@ -1,5 +1,6 @@
 {
     "require": {
-        "lbuchs/webauthn": "^2.2"
+        "lbuchs/webauthn": "^2.2",
+        "php-mqtt/client": "^2.3"
     }
 }
