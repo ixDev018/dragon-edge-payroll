@@ -7,4 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'lbuchs\\WebAuthn\\' => array($vendorDir . '/lbuchs/webauthn/src'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
+    'PhpMqtt\\Client\\' => array($vendorDir . '/php-mqtt/client/src'),
+    'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
 );
