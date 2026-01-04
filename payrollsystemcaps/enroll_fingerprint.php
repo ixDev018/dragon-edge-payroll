@@ -3,7 +3,7 @@ session_start();
 include 'db_connection.php';
 include 'sidebar.php';
 
-// Fetch employees without fingerprints
+// Fetch employees
 $employees = [];
 $sql = "SELECT id, employee_id, first_name, last_name, email, department, position, fingerprint_id 
         FROM employees WHERE is_active = 1 ORDER BY first_name ASC";
@@ -21,20 +21,15 @@ if ($row = $stmt->fetch_assoc()) {
     $next_fp_id = ($row['max_id'] ?? 0) + 1;
 }
 
-// Handle enrollment submission
-$message = '';
-$message_type = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enroll_employee'])) {
+// Handle manual assignment
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['assign_existing'])) {
     $employee_id = (int)$_POST['employee_id'];
     $fingerprint_id = (int)$_POST['fingerprint_id'];
     
-    // Update employee
     $stmt = $conn->prepare("UPDATE employees SET fingerprint_id = ?, updated_at = NOW() WHERE id = ?");
     $stmt->bind_param("ii", $fingerprint_id, $employee_id);
     
     if ($stmt->execute()) {
-        // Record enrollment
         $enrolled_by = $_SESSION['user_name'] ?? 'admin';
         $stmt = $conn->prepare("
             INSERT INTO biometric_enrollments 
@@ -44,22 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enroll_employee'])) {
         $stmt->bind_param("iis", $employee_id, $fingerprint_id, $enrolled_by);
         $stmt->execute();
         
-        $message = 'Employee enrolled successfully! They can now use the biometric scanner.';
-        $message_type = 'success';
-        
-        // Refresh employee list
         header("Location: enroll_fingerprint.php?success=1");
         exit;
-    } else {
-        $message = 'Error enrolling employee: ' . $conn->error;
-        $message_type = 'error';
     }
-}
-
-// Check for success message
-if (isset($_GET['success'])) {
-    $message = 'Enrollment completed successfully!';
-    $message_type = 'success';
 }
 ?>
 
@@ -68,7 +50,7 @@ if (isset($_GET['success'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fingerprint Enrollment | Dragon Edge</title>
+    <title>Live Enrollment | Dragon Edge</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -107,30 +89,27 @@ if (isset($_GET['success'])) {
             color: #667eea;
         }
         
-        .page-header p {
-            color: #7f8c8d;
-            margin: 0;
-        }
-        
-        .alert {
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
+        .live-badge {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
+            animation: pulse 2s infinite;
         }
         
-        .alert.success {
-            background: #d4edda;
-            color: #155724;
-            border: 2px solid #c3e6cb;
+        .live-badge.disconnected {
+            background: #dc3545;
+            animation: none;
         }
         
-        .alert.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 2px solid #f5c6cb;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
         
         .card {
@@ -139,43 +118,6 @@ if (isset($_GET['success'])) {
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 30px;
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .card-header h2 {
-            color: #2c3e50;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 0;
-        }
-        
-        .info-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-        
-        .info-box h3 {
-            margin: 0 0 10px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .info-box p {
-            margin: 5px 0;
-            opacity: 0.9;
         }
         
         .employees-table {
@@ -215,11 +157,6 @@ if (isset($_GET['success'])) {
             margin-right: 10px;
         }
         
-        .employee-name {
-            display: inline-flex;
-            align-items: center;
-        }
-        
         .status-badge {
             padding: 6px 12px;
             border-radius: 15px;
@@ -247,7 +184,7 @@ if (isset($_GET['success'])) {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            text-decoration: none;
+            font-size: 14px;
         }
         
         .btn-primary {
@@ -255,9 +192,14 @@ if (isset($_GET['success'])) {
             color: white;
         }
         
-        .btn-primary:hover {
+        .btn-primary:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
         .btn-secondary {
@@ -265,6 +207,12 @@ if (isset($_GET['success'])) {
             color: white;
         }
         
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        /* Live Enrollment Modal */
         .modal {
             display: none;
             position: fixed;
@@ -273,7 +221,7 @@ if (isset($_GET['success'])) {
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.7);
             align-items: center;
             justify-content: center;
         }
@@ -284,122 +232,161 @@ if (isset($_GET['success'])) {
         
         .modal-content {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 40px;
+            border-radius: 20px;
             max-width: 600px;
             width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
+            animation: modalSlideIn 0.3s;
+            position: relative;
         }
         
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
         
-        .modal-header h2 {
-            margin: 0;
-            color: #2c3e50;
-        }
-        
-        .close-btn {
-            background: none;
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f8f9fa;
             border: none;
-            font-size: 24px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 20px;
             cursor: pointer;
-            color: #7f8c8d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
         }
         
-        .form-group {
-            margin-bottom: 20px;
+        .modal-close:hover {
+            background: #e9ecef;
+            transform: rotate(90deg);
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+        .enrollment-status {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .status-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            animation: iconPulse 1.5s infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .status-icon.waiting {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .status-icon.scanning {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .status-icon.processing {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .status-icon.success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            animation: successBounce 0.6s;
+        }
+        
+        @keyframes successBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        
+        .status-icon.error {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        .status-message {
+            font-size: 24px;
             color: #2c3e50;
             font-weight: 600;
+            margin-bottom: 10px;
         }
         
-        .form-group input,
-        .form-group select {
+        .status-detail {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .progress-bar {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
         }
         
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
         }
         
-        .steps {
+        .quick-link-section {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
-            margin: 20px 0;
+            margin-bottom: 30px;
         }
         
-        .steps h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: none;
+            align-items: center;
+            gap: 15px;
+            z-index: 2000;
+            animation: slideInRight 0.3s;
         }
         
-        .steps ol {
-            margin: 0;
-            padding-left: 20px;
+        @keyframes slideInRight {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
         
-        .steps li {
-            margin-bottom: 10px;
-            color: #495057;
+        .toast.show {
+            display: flex;
         }
         
-        .fingerprint-id-display {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .fingerprint-id-display h3 {
-            margin: 0 0 10px 0;
-            font-size: 16px;
-            opacity: 0.9;
-        }
-        
-        .fingerprint-id-display .fp-id {
-            font-size: 48px;
-            font-weight: 700;
-        }
-        
-        .search-box {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 12px 40px 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        
-        .search-box i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #7f8c8d;
-        }
+        .toast.success { border-left: 4px solid #28a745; }
+        .toast.error { border-left: 4px solid #dc3545; }
+        .toast.info { border-left: 4px solid #17a2b8; }
     </style>
 </head>
 <body>
@@ -408,53 +395,64 @@ if (isset($_GET['success'])) {
     <div class="page-header">
         <h1>
             <i class="fas fa-fingerprint"></i>
-            Fingerprint Enrollment
+            Live Fingerprint Enrollment
+            <span class="live-badge" id="connectionStatus">
+                <span style="width: 8px; height: 8px; background: white; border-radius: 50%; display: inline-block;"></span>
+                <span id="statusText">CONNECTING...</span>
+            </span>
         </h1>
-        <p>Register employees for biometric attendance</p>
+        <p>Real-time enrollment with ESP32 - Fully synchronized!</p>
     </div>
     
-    <?php if ($message): ?>
-        <div class="alert <?php echo $message_type; ?>">
-            <i class="fas fa-<?php echo $message_type === 'success' ? 'check-circle' : 'exclamation-triangle'; ?>"></i>
-            <?php echo $message; ?>
-        </div>
-    <?php endif; ?>
-    
-    <div class="card">
-        <div class="info-box">
-            <h3><i class="fas fa-info-circle"></i> How to Enroll</h3>
-            <p><strong>1.</strong> Click "Enroll" button next to an employee</p>
-            <p><strong>2.</strong> Note the Fingerprint ID shown</p>
-            <p><strong>3.</strong> Use ESP32 serial command: <code>enroll [employee_id]</code></p>
-            <p><strong>4.</strong> Scan admin finger to authorize</p>
-            <p><strong>5.</strong> Employee scans their finger twice</p>
-            <p><strong>6.</strong> Confirm enrollment on this page</p>
-        </div>
-        
-        <div class="card-header">
-            <h2>
-                <i class="fas fa-users"></i>
-                Employee List
-            </h2>
-            <div>
-                <span style="color: #7f8c8d; margin-right: 15px;">
-                    Next FP ID: <strong style="color: #667eea;"><?php echo $next_fp_id; ?></strong>
-                </span>
+    <!-- Quick Link Section -->
+    <div class="card quick-link-section">
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">
+            <i class="fas fa-link"></i> Quick Link Existing Fingerprint
+        </h3>
+        <p style="color: #7f8c8d; margin-bottom: 15px; font-size: 14px;">
+            Already enrolled a fingerprint on ESP32? Link it to an employee here:
+        </p>
+        <form method="POST" action="" style="display: flex; gap: 10px; align-items: end;">
+            <div style="flex: 1;">
+                <label style="display: block; margin-bottom: 5px; font-size: 13px; color: #2c3e50;">Employee</label>
+                <select name="employee_id" required style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 8px;">
+                    <option value="">Select Employee</option>
+                    <?php foreach ($employees as $emp): ?>
+                        <?php if (!$emp['fingerprint_id']): ?>
+                            <option value="<?php echo $emp['id']; ?>">
+                                <?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?>
+                            </option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
             </div>
-        </div>
+            <div style="width: 150px;">
+                <label style="display: block; margin-bottom: 5px; font-size: 13px; color: #2c3e50;">FP ID</label>
+                <input type="number" name="fingerprint_id" min="1" placeholder="e.g., 1" required style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 8px;">
+            </div>
+            <button type="submit" name="assign_existing" class="btn btn-primary">
+                <i class="fas fa-link"></i> Link
+            </button>
+        </form>
+    </div>
+    
+    <!-- Employees List -->
+    <div class="card">
+        <h2 style="margin-bottom: 20px; color: #2c3e50; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-users"></i>
+            Employees
+            <span style="color: #7f8c8d; font-size: 14px; font-weight: normal; margin-left: 10px;">
+                Next FP ID: <strong style="color: #667eea;"><?php echo $next_fp_id; ?></strong>
+            </span>
+        </h2>
         
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search employees...">
-            <i class="fas fa-search"></i>
-        </div>
-        
-        <table class="employees-table" id="employeesTable">
+        <table class="employees-table">
             <thead>
                 <tr>
                     <th>Employee</th>
                     <th>Department</th>
                     <th>Position</th>
-                    <th>Fingerprint ID</th>
+                    <th>FP ID</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -463,14 +461,14 @@ if (isset($_GET['success'])) {
                 <?php foreach ($employees as $emp): ?>
                     <tr>
                         <td>
-                            <div class="employee-name">
+                            <div style="display: inline-flex; align-items: center;">
                                 <div class="employee-avatar">
                                     <?php echo strtoupper(substr($emp['first_name'], 0, 1)); ?>
                                 </div>
                                 <div>
                                     <strong><?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?></strong>
                                     <br>
-                                    <small style="color: #7f8c8d;"><?php echo htmlspecialchars($emp['employee_id']); ?></small>
+                                    <small style="color: #7f8c8d;">ID: <?php echo htmlspecialchars($emp['employee_id']); ?></small>
                                 </div>
                             </div>
                         </td>
@@ -480,7 +478,7 @@ if (isset($_GET['success'])) {
                             <?php if ($emp['fingerprint_id']): ?>
                                 <strong style="color: #667eea;">#<?php echo $emp['fingerprint_id']; ?></strong>
                             <?php else: ?>
-                                <span style="color: #7f8c8d;">Not assigned</span>
+                                <span style="color: #7f8c8d;">—</span>
                             <?php endif; ?>
                         </td>
                         <td>
@@ -496,13 +494,17 @@ if (isset($_GET['success'])) {
                         </td>
                         <td>
                             <?php if (!$emp['fingerprint_id']): ?>
-                                <button class="btn btn-primary" onclick="showEnrollModal(<?php echo $emp['id']; ?>, '<?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?>', '<?php echo $emp['employee_id']; ?>', <?php echo $next_fp_id; ?>)">
-                                    <i class="fas fa-fingerprint"></i> Enroll
+                                <button class="btn btn-primary" id="enrollBtn<?php echo $emp['id']; ?>" onclick='startEnrollment(<?php echo json_encode([
+                                    "id" => $emp["id"],
+                                    "name" => $emp["first_name"] . " " . $emp["last_name"],
+                                    "emp_id" => $emp["employee_id"]
+                                ]); ?>)'>
+                                    <i class="fas fa-fingerprint"></i> Enroll Now
                                 </button>
                             <?php else: ?>
-                                <button class="btn btn-secondary" onclick="showDetailsModal(<?php echo $emp['fingerprint_id']; ?>, '<?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?>')">
-                                    <i class="fas fa-eye"></i> Details
-                                </button>
+                                <span style="color: #28a745; font-weight: 600;">
+                                    <i class="fas fa-check-circle"></i> Done
+                                </span>
                             <?php endif; ?>
                         </td>
                     </tr>
@@ -512,123 +514,272 @@ if (isset($_GET['success'])) {
     </div>
 </div>
 
-<!-- Enrollment Modal -->
-<div class="modal" id="enrollModal">
+<!-- Live Enrollment Modal -->
+<div class="modal" id="enrollmentModal">
     <div class="modal-content">
-        <div class="modal-header">
-            <h2><i class="fas fa-fingerprint"></i> Enroll Fingerprint</h2>
-            <button class="close-btn" onclick="closeModal()">&times;</button>
-        </div>
-        
-        <div id="enrollContent">
-            <!-- Content will be filled by JavaScript -->
+        <button class="modal-close" onclick="cancelEnrollment()">×</button>
+        <div class="enrollment-status" id="enrollmentStatus">
+            <!-- Dynamic content -->
         </div>
     </div>
 </div>
 
-<!-- Details Modal -->
-<div class="modal" id="detailsModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2><i class="fas fa-info-circle"></i> Enrollment Details</h2>
-            <button class="close-btn" onclick="closeDetailsModal()">&times;</button>
-        </div>
-        
-        <div id="detailsContent">
-            <!-- Content will be filled by JavaScript -->
-        </div>
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+    <i class="fas fa-check-circle" style="font-size: 24px; color: #28a745;"></i>
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <div id="toastMessage" style="font-size: 14px; color: #7f8c8d;"></div>
     </div>
 </div>
 
 <script>
-// Search functionality
-document.getElementById('searchInput').addEventListener('keyup', function() {
-    const searchTerm = this.value.toLowerCase();
-    const rows = document.querySelectorAll('#employeesTable tbody tr');
+// ═══════════════════════════════════════════════════════════════
+//  REAL-TIME POLLING SYSTEM (Fallback for MQTT WebSocket issues)
+// ═══════════════════════════════════════════════════════════════
+
+let pollingInterval = null;
+let currentEmployee = null;
+let enrollmentInProgress = false;
+let enrollmentStartTime = 0;
+let currentProgress = 0;
+
+// Start polling for real-time updates
+function startPolling() {
+    if (pollingInterval) return;
     
-    rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(searchTerm) ? '' : 'none';
-    });
+    pollingInterval = setInterval(async () => {
+        if (!enrollmentInProgress) return;
+        
+        try {
+            const response = await fetch('enrollment_status_api.php?employee_id=' + currentEmployee.id);
+            const data = await response.json();
+            
+            if (data.status) {
+                handleEnrollmentUpdate(data);
+            }
+        } catch (err) {
+            console.error('Polling error:', err);
+        }
+    }, 500); // Poll every 500ms for smooth updates
+}
+
+function stopPolling() {
+    if (pollingInterval) {
+        clearInterval(pollingInterval);
+        pollingInterval = null;
+    }
+}
+
+// Handle enrollment status updates
+function handleEnrollmentUpdate(data) {
+    const status = data.status;
+    const message = data.message || '';
+    
+    switch(status) {
+        case 'waiting_admin':
+            showStatus('waiting', 'Waiting for Admin...', message, 20);
+            break;
+        case 'admin_authorized':
+            showStatus('scanning', 'Admin Authorized!', message, 40);
+            showToast('Admin authorized!', 'Employee can now scan finger', 'success');
+            break;
+        case 'scanning':
+            showStatus('scanning', 'Scanning Fingerprint...', message, 60);
+            break;
+        case 'processing':
+            showStatus('processing', 'Processing...', message, 80);
+            break;
+        case 'storing':
+            showStatus('processing', 'Saving Fingerprint...', message, 90);
+            break;
+        case 'success':
+            showStatus('success', 'Enrollment Complete!', `${currentEmployee.name} is now enrolled!`, 100);
+            showToast('Success!', `${currentEmployee.name} enrolled successfully`, 'success');
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+            break;
+        case 'error':
+            showStatus('error', 'Error Occurred', message, 0);
+            showToast('Error', message, 'error');
+            setTimeout(() => {
+                closeEnrollment();
+            }, 3000);
+            break;
+        case 'timeout':
+            showStatus('error', 'Timeout', message, 0);
+            showToast('Timeout', 'Enrollment timed out', 'error');
+            setTimeout(() => {
+                closeEnrollment();
+            }, 3000);
+            break;
+        case 'cancelled':
+            showStatus('error', 'Cancelled', 'Enrollment was cancelled', 0);
+            setTimeout(() => {
+                closeEnrollment();
+            }, 2000);
+            break;
+    }
+}
+
+// Start enrollment
+function startEnrollment(employee) {
+    currentEmployee = employee;
+    enrollmentInProgress = true;
+    enrollmentStartTime = Date.now();
+    currentProgress = 0;
+    
+    // Disable all enroll buttons
+    document.querySelectorAll('[id^="enrollBtn"]').forEach(btn => btn.disabled = true);
+    
+    document.getElementById('enrollmentModal').classList.add('active');
+    showStatus('waiting', 'Starting Enrollment...', `Enrolling: ${employee.name}`, 10);
+    
+    // Send enrollment request to backend
+    fetch('enrollment_request_api.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            employee_id: employee.id,
+            employee_name: employee.name,
+            fingerprint_id: <?php echo $next_fp_id; ?>
+        })
+    }).then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              showStatus('waiting', 'Waiting for Admin...', 'Admin must scan finger to authorize', 20);
+              startPolling();
+          } else {
+              showStatus('error', 'Connection Error', data.message || 'Failed to start enrollment', 0);
+          }
+      });
+}
+
+// Cancel enrollment
+function cancelEnrollment() {
+    if (!enrollmentInProgress) {
+        closeEnrollment();
+        return;
+    }
+    
+    if (confirm('Are you sure you want to cancel this enrollment?')) {
+        enrollmentInProgress = false;
+        stopPolling();
+        
+        // Send cancellation to ESP32
+        fetch('enrollment_cancel_api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                employee_id: currentEmployee.id
+            })
+        });
+        
+        showToast('Cancelled', 'Enrollment cancelled', 'info');
+        closeEnrollment();
+    }
+}
+
+// Close enrollment modal
+function closeEnrollment() {
+    enrollmentInProgress = false;
+    currentEmployee = null;
+    stopPolling();
+    document.getElementById('enrollmentModal').classList.remove('active');
+    
+    // Re-enable all enroll buttons
+    document.querySelectorAll('[id^="enrollBtn"]').forEach(btn => btn.disabled = false);
+}
+
+// Show status in modal
+function showStatus(type, title, message, progress) {
+    currentProgress = progress;
+    
+    const icons = {
+        waiting: '<i class="fas fa-clock"></i>',
+        scanning: '<i class="fas fa-fingerprint"></i>',
+        processing: '<i class="fas fa-cog fa-spin"></i>',
+        success: '<i class="fas fa-check-circle"></i>',
+        error: '<i class="fas fa-exclamation-triangle"></i>'
+    };
+    
+    const html = `
+        <div class="status-icon ${type}">
+            ${icons[type]}
+        </div>
+        <div class="status-message">${title}</div>
+        <div class="status-detail">${message}</div>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: ${progress}%"></div>
+        </div>
+        ${type === 'error' || type === 'success' ? `
+            <button class="btn btn-primary" onclick="closeEnrollment()" style="margin-top: 20px;">
+                <i class="fas fa-times"></i> Close
+            </button>
+        ` : `
+            <button class="btn btn-danger" onclick="cancelEnrollment()" style="margin-top: 20px;">
+                <i class="fas fa-ban"></i> Cancel
+            </button>
+        `}
+    `;
+    
+    document.getElementById('enrollmentStatus').innerHTML = html;
+}
+
+// Show toast notification
+function showToast(title, message, type) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastTitle').textContent = title;
+    document.getElementById('toastMessage').textContent = message;
+    
+    toast.className = 'toast ' + type + ' show';
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 4000);
+}
+
+// Update connection status
+function updateConnectionStatus(connected) {
+    const badge = document.getElementById('connectionStatus');
+    const text = document.getElementById('statusText');
+    
+    if (connected) {
+        badge.classList.remove('disconnected');
+        text.textContent = 'LIVE';
+    } else {
+        badge.classList.add('disconnected');
+        text.textContent = 'OFFLINE';
+    }
+}
+
+// Check connection status
+async function checkConnection() {
+    try {
+        const response = await fetch('check_connection.php');
+        const data = await response.json();
+        updateConnectionStatus(data.connected);
+    } catch {
+        updateConnectionStatus(false);
+    }
+}
+
+// Initialize
+window.addEventListener('load', function() {
+    checkConnection();
+    setInterval(checkConnection, 5000);
+    
+    updateConnectionStatus(true); // Assume connected initially
 });
 
-function showEnrollModal(empId, empName, empCode, fpId) {
-    const content = `
-        <form method="POST" action="">
-            <div class="fingerprint-id-display">
-                <h3>Assign Fingerprint ID</h3>
-                <div class="fp-id">${fpId}</div>
-            </div>
-            
-            <div class="form-group">
-                <label>Employee</label>
-                <input type="text" value="${empName} (${empCode})" readonly>
-            </div>
-            
-            <input type="hidden" name="employee_id" value="${empId}">
-            <input type="hidden" name="fingerprint_id" value="${fpId}">
-            
-            <div class="steps">
-                <h4>Enrollment Steps:</h4>
-                <ol>
-                    <li>Open ESP32 Serial Monitor (115200 baud)</li>
-                    <li>Type command: <strong>enroll ${empId}</strong></li>
-                    <li>Press Enter</li>
-                    <li>Scan an admin fingerprint to authorize</li>
-                    <li>Employee scans their finger twice</li>
-                    <li>Wait for success beep</li>
-                    <li>Click "Confirm Enrollment" below</li>
-                </ol>
-            </div>
-            
-            <div style="display: flex; gap: 10px;">
-                <button type="submit" name="enroll_employee" class="btn btn-primary" style="flex: 1;">
-                    <i class="fas fa-check"></i> Confirm Enrollment
-                </button>
-                <button type="button" onclick="closeModal()" class="btn btn-secondary">
-                    <i class="fas fa-times"></i> Cancel
-                </button>
-            </div>
-        </form>
-    `;
-    
-    document.getElementById('enrollContent').innerHTML = content;
-    document.getElementById('enrollModal').classList.add('active');
-}
-
-function showDetailsModal(fpId, empName) {
-    const content = `
-        <p><strong>Employee:</strong> ${empName}</p>
-        <p><strong>Fingerprint ID:</strong> #${fpId}</p>
-        <p><strong>Status:</strong> <span class="status-badge enrolled"><i class="fas fa-check"></i> Enrolled</span></p>
-        <br>
-        <button type="button" onclick="closeDetailsModal()" class="btn btn-primary">Close</button>
-    `;
-    
-    document.getElementById('detailsContent').innerHTML = content;
-    document.getElementById('detailsModal').classList.add('active');
-}
-
-function closeModal() {
-    document.getElementById('enrollModal').classList.remove('active');
-}
-
-function closeDetailsModal() {
-    document.getElementById('detailsModal').classList.remove('active');
-}
-
-// Close modal on outside click
-window.onclick = function(event) {
-    const enrollModal = document.getElementById('enrollModal');
-    const detailsModal = document.getElementById('detailsModal');
-    
-    if (event.target === enrollModal) {
-        closeModal();
+// Prevent accidental page close during enrollment
+window.addEventListener('beforeunload', function(e) {
+    if (enrollmentInProgress) {
+        e.preventDefault();
+        e.returnValue = 'Enrollment in progress. Are you sure you want to leave?';
     }
-    if (event.target === detailsModal) {
-        closeDetailsModal();
-    }
-}
+});
 </script>
 
 </body>
