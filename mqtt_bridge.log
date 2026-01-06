@@ -1,0 +1,404 @@
+[2026-01-03 17:54:54] [INFO] ==========================================
+[2026-01-03 17:54:54] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 17:54:54] [INFO] ==========================================
+[2026-01-03 17:54:54] [SUCCESS] Database connected
+[2026-01-03 17:54:54] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 17:54:55] [ERROR] MQTT connection failed!
+[2026-01-03 17:56:33] [INFO] ==========================================
+[2026-01-03 17:56:33] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 17:56:33] [INFO] ==========================================
+[2026-01-03 17:56:33] [SUCCESS] Database connected
+[2026-01-03 17:56:33] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 17:56:34] [ERROR] MQTT connection failed!
+[2026-01-03 18:00:56] [INFO] ==========================================
+[2026-01-03 18:00:56] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 18:00:56] [INFO] ==========================================
+[2026-01-03 18:00:56] [SUCCESS] Database connected
+[2026-01-03 18:00:56] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 18:00:58] [SUCCESS] MQTT connected successfully
+[2026-01-03 18:00:58] [SUCCESS] Subscribed to all topics
+[2026-01-03 18:00:58] [INFO] ==========================================
+[2026-01-03 18:00:58] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-03 18:00:58] [INFO] Press Ctrl+C to stop
+[2026-01-03 18:00:58] [INFO] ==========================================
+
+[2026-01-03 18:00:59] [INFO] Device status update received
+[2026-01-03 18:00:59] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:01] [INFO] Device status update received
+[2026-01-03 18:01:01] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:14] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:01:14] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 04:59:19, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:14] [INFO] Raw attendance saved with ID: 1
+[2026-01-03 18:01:14] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:01:19] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:01:19] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 04:59:24, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:19] [INFO] Raw attendance saved with ID: 2
+[2026-01-03 18:01:19] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:01:55] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:01:55] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:00, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:55] [INFO] Raw attendance saved with ID: 3
+[2026-01-03 18:01:55] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:02:00] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:02:00] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:05, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:00] [INFO] Raw attendance saved with ID: 4
+[2026-01-03 18:02:00] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:02:02] [INFO] Device status update received
+[2026-01-03 18:02:02] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:03] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:02:03] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:08, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:03] [INFO] Raw attendance saved with ID: 5
+[2026-01-03 18:02:03] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:02:06] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:02:06] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:11, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:06] [INFO] Raw attendance saved with ID: 6
+[2026-01-03 18:02:06] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:03:02] [INFO] Device status update received
+[2026-01-03 18:03:02] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:04:02] [INFO] Device status update received
+[2026-01-03 18:04:02] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:05:03] [INFO] Device status update received
+[2026-01-03 18:05:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:06:03] [INFO] Device status update received
+[2026-01-03 18:06:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:07:03] [INFO] Device status update received
+[2026-01-03 18:07:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:08:03] [INFO] Device status update received
+[2026-01-03 18:08:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:09:03] [INFO] Device status update received
+[2026-01-03 18:09:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:10:32] [INFO] Device status update received
+[2026-01-03 18:10:32] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:11:20] [INFO] Device status update received
+[2026-01-03 18:11:20] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:12:03] [INFO] Device status update received
+[2026-01-03 18:12:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:22:51] [INFO] ==========================================
+[2026-01-03 18:22:51] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 18:22:51] [INFO] ==========================================
+[2026-01-03 18:22:51] [SUCCESS] Database connected
+[2026-01-03 18:22:51] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 18:22:53] [SUCCESS] MQTT connected successfully
+[2026-01-03 18:22:53] [SUCCESS] Subscribed to all topics
+[2026-01-03 18:22:53] [INFO] ==========================================
+[2026-01-03 18:22:53] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-03 18:22:53] [INFO] Press Ctrl+C to stop
+[2026-01-03 18:22:53] [INFO] ==========================================
+
+[2026-01-03 18:22:54] [INFO] Device status update received
+[2026-01-03 18:22:54] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:15] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:23:15] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:21:20, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:15] [INFO] Raw attendance saved with ID: 7
+[2026-01-03 18:23:15] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:23:15] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:23:22] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:23:22] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:21:27, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:22] [INFO] Raw attendance saved with ID: 8
+[2026-01-03 18:23:22] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:23:22] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:23:31] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:23:31] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:21:36, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:31] [INFO] Raw attendance saved with ID: 9
+[2026-01-03 18:23:31] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:23:31] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:23:43] [INFO] Device status update received
+[2026-01-03 18:23:43] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:24:46] [INFO] Device status update received
+[2026-01-03 18:24:46] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:25:43] [INFO] Device status update received
+[2026-01-03 18:25:43] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:26:47] [INFO] Device status update received
+[2026-01-03 18:26:47] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:27:10] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:27:10] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:25:15, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:27:10] [INFO] Raw attendance saved with ID: 10
+[2026-01-03 18:27:10] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:27:10] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:27:25] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:27:25] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:25:29, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:27:25] [INFO] Raw attendance saved with ID: 11
+[2026-01-03 18:27:25] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:27:25] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:27:33] [INFO] Device status update received
+[2026-01-03 18:27:33] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:28:34] [INFO] Device status update received
+[2026-01-03 18:28:34] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:29:35] [INFO] Device status update received
+[2026-01-03 18:29:35] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:30:33] [INFO] Device status update received
+[2026-01-03 18:30:33] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:31:44] [INFO] Device status update received
+[2026-01-03 18:31:44] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:32:03] [INFO] Message received on topic: dragonedge/enrollment
+[2026-01-03 18:32:03] [INFO] Processing enrollment: Emp_ID=4, FP_ID=2
+[2026-01-03 18:32:03] [SUCCESS] ✓ Employee Josue Cruz enrolled with Fingerprint ID: 2
+[2026-01-03 18:33:14] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:33:14] [INFO] Processing attendance: FP_ID=2, Time=2025-12-27 05:31:19, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:33:14] [INFO] Raw attendance saved with ID: 12
+[2026-01-03 18:33:14] [INFO] Employee identified: Josue Cruz (ID: 4)
+[2026-01-03 18:33:14] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-03 18:37:31] [INFO] Device status update received
+[2026-01-03 18:37:32] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:53:37] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:53:37] [INFO] Processing attendance: FP_ID=2, Time=2025-12-27 05:51:42, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:53:37] [INFO] Raw attendance saved with ID: 13
+[2026-01-03 18:53:37] [INFO] Employee identified: Josue Cruz (ID: 4)
+[2026-01-03 18:53:37] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-03 18:53:57] [INFO] Message received on topic: dragonedge/enrollment
+[2026-01-03 18:53:57] [INFO] Processing enrollment: Emp_ID=2, FP_ID=3
+[2026-01-03 18:53:57] [SUCCESS] ✓ Employee Juan Dela Cruz enrolled with Fingerprint ID: 3
+[2026-01-03 18:55:00] [INFO] Message received on topic: dragonedge/enrollment
+[2026-01-03 18:55:00] [INFO] Processing enrollment: Emp_ID=3, FP_ID=4
+[2026-01-03 18:55:00] [SUCCESS] ✓ Employee Maria Clara enrolled with Fingerprint ID: 4
+[2026-01-03 18:58:56] [INFO] Device status update received
+[2026-01-03 18:58:56] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 19:25:51] [ERROR] MQTT Error: [66] Transferring data over socket failed: The socket has reached EOF which indicates it has been closed by the broker.
+[2026-01-03 19:25:51] [ERROR] Stack trace: #0 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\vendor\php-mqtt\client\src\MqttClient.php(1259): PhpMqtt\Client\MqttClient->readFromSocket(8192, true)
+#1 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\vendor\php-mqtt\client\src\MqttClient.php(642): PhpMqtt\Client\MqttClient->readAllAvailableDataFromSocket(true)
+#2 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\vendor\php-mqtt\client\src\MqttClient.php(615): PhpMqtt\Client\MqttClient->loopOnce(1767435773.6555, true)
+#3 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\mqtt_bridge.php(271): PhpMqtt\Client\MqttClient->loop(true)
+#4 {main}
+[2026-01-04 23:19:59] [INFO] ==========================================
+[2026-01-04 23:19:59] [INFO] MQTT Bridge Service Starting...
+[2026-01-04 23:19:59] [INFO] ==========================================
+[2026-01-04 23:19:59] [SUCCESS] Database connected
+[2026-01-04 23:19:59] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-04 23:20:00] [SUCCESS] MQTT connected successfully
+[2026-01-04 23:20:00] [SUCCESS] Subscribed to all topics
+[2026-01-04 23:20:00] [INFO] ==========================================
+[2026-01-04 23:20:00] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-04 23:20:00] [INFO] Press Ctrl+C to stop
+[2026-01-04 23:20:00] [INFO] ==========================================
+
+[2026-01-04 23:20:00] [INFO] Device status update received
+[2026-01-04 23:20:00] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-04 23:23:59] [INFO] Device status update received
+[2026-01-04 23:23:59] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-04 23:44:32] [INFO] ==========================================
+[2026-01-04 23:44:32] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-04 23:44:32] [INFO] ==========================================
+[2026-01-04 23:44:32] [SUCCESS] Database connected
+[2026-01-04 23:44:32] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-04 23:44:33] [SUCCESS] MQTT connected successfully
+[2026-01-04 23:44:33] [SUCCESS] Subscribed to all topics
+[2026-01-04 23:44:33] [INFO] ==========================================
+[2026-01-04 23:44:33] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-04 23:44:33] [INFO] Press Ctrl+C to stop
+[2026-01-04 23:44:33] [INFO] ==========================================
+
+[2026-01-04 23:47:59] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:06] [INFO] Status update: Emp_ID=916, Status=admin_authorized
+[2026-01-04 23:48:07] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:11] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:15] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:16] [INFO] Status update: Emp_ID=916, Status=error
+[2026-01-04 23:48:23] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:24] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:25] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:29] [INFO] Status update: Emp_ID=916, Status=admin_authorized
+[2026-01-04 23:48:30] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:33] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:35] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:37] [INFO] Status update: Emp_ID=916, Status=processing
+[2026-01-04 23:48:38] [INFO] Status update: Emp_ID=916, Status=storing
+[2026-01-04 23:48:38] [INFO] Processing enrollment: Emp_ID=916, FP_ID=5
+[2026-01-04 23:48:38] [SUCCESS] ✓ Sherwin Licu enrolled with FP ID: 5
+[2026-01-04 23:48:38] [INFO] Status update: Emp_ID=916, Status=success
+[2026-01-05 00:32:26] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:30:31
+[2026-01-05 00:32:26] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:32:26] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:34:09] [INFO] Processing attendance: FP_ID=5, Time=2025-12-28 11:32:13
+[2026-01-05 00:34:09] [INFO] Employee identified: Sherwin Licu
+[2026-01-05 00:34:09] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-05 00:34:28] [INFO] Processing attendance: FP_ID=5, Time=2025-12-28 11:32:33
+[2026-01-05 00:34:28] [INFO] Employee identified: Sherwin Licu
+[2026-01-05 00:34:28] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-05 00:34:32] [INFO] Processing attendance: FP_ID=5, Time=2025-12-28 11:32:37
+[2026-01-05 00:34:32] [INFO] Employee identified: Sherwin Licu
+[2026-01-05 00:34:32] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-05 00:39:46] [INFO] Processing attendance: FP_ID=5, Time=2025-12-28 11:37:51
+[2026-01-05 00:39:46] [INFO] Employee identified: Sherwin Licu
+[2026-01-05 00:39:46] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-05 00:39:55] [INFO] Processing attendance: FP_ID=5, Time=2025-12-28 11:38:00
+[2026-01-05 00:39:55] [INFO] Employee identified: Sherwin Licu
+[2026-01-05 00:39:55] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-05 00:41:24] [INFO] Processing attendance: FP_ID=2, Time=2025-12-28 11:39:28
+[2026-01-05 00:41:24] [INFO] Employee identified: Josue Cruz
+[2026-01-05 00:41:24] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-05 00:41:33] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:39:38
+[2026-01-05 00:41:33] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:41:33] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:41:36] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:39:41
+[2026-01-05 00:41:36] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:41:36] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:41:41] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:39:44
+[2026-01-05 00:41:41] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:41:41] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:41:57] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:39:52
+[2026-01-05 00:41:57] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:41:57] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:41:57] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:39:55
+[2026-01-05 00:41:57] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:41:57] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:41:57] [INFO] Processing attendance: FP_ID=3, Time=2025-12-28 11:40:00
+[2026-01-05 00:41:57] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-05 00:41:57] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-05 00:42:57] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:41:02
+[2026-01-05 00:42:57] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:42:57] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:43:01] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:41:06
+[2026-01-05 00:43:01] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:43:01] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:43:09] [INFO] Processing attendance: FP_ID=5, Time=2025-12-28 11:41:14
+[2026-01-05 00:43:09] [INFO] Employee identified: Sherwin Licu
+[2026-01-05 00:43:09] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-05 00:43:14] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:41:18
+[2026-01-05 00:43:14] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:43:14] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:43:17] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:41:21
+[2026-01-05 00:43:17] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:43:17] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:43:20] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:41:24
+[2026-01-05 00:43:20] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:43:20] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:43:49] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:41:54
+[2026-01-05 00:43:49] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:43:49] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:43:56] [INFO] Processing attendance: FP_ID=1, Time=2025-12-28 11:42:01
+[2026-01-05 00:43:56] [INFO] Employee identified: Pedro Sanchez
+[2026-01-05 00:43:56] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-05 00:44:00] [INFO] Processing attendance: FP_ID=3, Time=2025-12-28 11:42:05
+[2026-01-05 00:44:00] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-05 00:44:00] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-05 00:44:03] [INFO] Processing attendance: FP_ID=3, Time=2025-12-28 11:42:08
+[2026-01-05 00:44:03] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-05 00:44:03] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-06 04:38:47] [INFO] ==========================================
+[2026-01-06 04:38:47] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-06 04:38:47] [INFO] ==========================================
+[2026-01-06 04:38:47] [SUCCESS] Database connected
+[2026-01-06 04:38:48] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-06 04:38:49] [SUCCESS] MQTT connected successfully
+[2026-01-06 04:38:49] [SUCCESS] Subscribed to all topics
+[2026-01-06 04:38:49] [INFO] ==========================================
+[2026-01-06 04:38:49] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-06 04:38:49] [INFO] Press Ctrl+C to stop
+[2026-01-06 04:38:49] [INFO] ==========================================
+
+[2026-01-06 04:41:15] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:39:20
+[2026-01-06 04:41:15] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:41:15] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:41:26] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:39:31
+[2026-01-06 04:41:26] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:41:26] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:45:14] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:43:19
+[2026-01-06 04:45:14] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:45:14] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:45:32] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:43:37
+[2026-01-06 04:45:32] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:45:32] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:48:23] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:46:27
+[2026-01-06 04:48:23] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:48:23] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:48:32] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:46:36
+[2026-01-06 04:48:32] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:48:32] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:52:39] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:50:44
+[2026-01-06 04:52:39] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:52:39] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:52:49] [INFO] Processing attendance: FP_ID=2, Time=2025-12-29 15:50:54
+[2026-01-06 04:52:49] [INFO] Employee identified: Josue Cruz
+[2026-01-06 04:52:49] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-06 04:53:05] [INFO] Processing attendance: FP_ID=2, Time=2025-12-29 15:51:09
+[2026-01-06 04:53:05] [INFO] Employee identified: Josue Cruz
+[2026-01-06 04:53:05] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-06 04:54:20] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 15:52:24
+[2026-01-06 04:54:20] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 04:54:20] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 04:54:48] [INFO] Processing attendance: FP_ID=5, Time=2025-12-29 15:52:53
+[2026-01-06 04:54:48] [INFO] Employee identified: Sherwin Licu
+[2026-01-06 04:54:48] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-06 04:55:01] [INFO] Processing attendance: FP_ID=5, Time=2025-12-29 15:53:05
+[2026-01-06 04:55:01] [INFO] Employee identified: Sherwin Licu
+[2026-01-06 04:55:01] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-06 04:55:23] [INFO] Processing attendance: FP_ID=2, Time=2025-12-29 15:53:28
+[2026-01-06 04:55:23] [INFO] Employee identified: Josue Cruz
+[2026-01-06 04:55:23] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-06 04:55:27] [INFO] Processing attendance: FP_ID=2, Time=2025-12-29 15:53:31
+[2026-01-06 04:55:27] [INFO] Employee identified: Josue Cruz
+[2026-01-06 04:55:27] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-06 04:55:30] [INFO] Processing attendance: FP_ID=2, Time=2025-12-29 15:53:34
+[2026-01-06 04:55:30] [INFO] Employee identified: Josue Cruz
+[2026-01-06 04:55:30] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-06 04:57:59] [INFO] Processing attendance: FP_ID=3, Time=2025-12-29 15:56:03
+[2026-01-06 04:57:59] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-06 04:57:59] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-06 04:58:30] [INFO] Processing attendance: FP_ID=3, Time=2025-12-29 15:56:35
+[2026-01-06 04:58:30] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-06 04:58:30] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-06 05:00:33] [INFO] Processing attendance: FP_ID=5, Time=2025-12-29 15:58:37
+[2026-01-06 05:00:33] [INFO] Employee identified: Sherwin Licu
+[2026-01-06 05:00:33] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-06 05:00:43] [INFO] Processing attendance: FP_ID=5, Time=2025-12-29 15:58:47
+[2026-01-06 05:00:43] [INFO] Employee identified: Sherwin Licu
+[2026-01-06 05:00:43] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-06 05:07:15] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 16:05:20
+[2026-01-06 05:07:15] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 05:07:15] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 05:17:47] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 16:15:52
+[2026-01-06 05:17:47] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 05:17:47] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 05:20:14] [INFO] Processing attendance: FP_ID=3, Time=2025-12-29 16:18:18
+[2026-01-06 05:20:14] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-06 05:20:14] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-06 05:20:35] [INFO] Processing attendance: FP_ID=3, Time=2025-12-29 16:18:39
+[2026-01-06 05:20:35] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-06 05:20:35] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-06 05:22:15] [INFO] Processing attendance: FP_ID=5, Time=2025-12-29 16:20:20
+[2026-01-06 05:22:15] [INFO] Employee identified: Sherwin Licu
+[2026-01-06 05:22:15] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-06 05:23:18] [INFO] Processing attendance: FP_ID=5, Time=2025-12-29 16:21:23
+[2026-01-06 05:23:18] [INFO] Employee identified: Sherwin Licu
+[2026-01-06 05:23:18] [SUCCESS] ✓ Attendance processed for Sherwin Licu
+[2026-01-06 05:34:24] [INFO] Processing attendance: FP_ID=3, Time=2025-12-29 16:32:29
+[2026-01-06 05:34:24] [INFO] Employee identified: Juan Dela Cruz
+[2026-01-06 05:34:24] [SUCCESS] ✓ Attendance processed for Juan Dela Cruz
+[2026-01-06 05:38:01] [INFO] Processing attendance: FP_ID=1, Time=2025-12-29 16:36:06
+[2026-01-06 05:38:01] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 05:38:01] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-06 05:39:08] [INFO] ==========================================
+[2026-01-06 05:39:08] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-06 05:39:08] [INFO] ==========================================
+[2026-01-06 05:39:08] [SUCCESS] Database connected
+[2026-01-06 05:39:08] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-06 05:39:09] [SUCCESS] MQTT connected successfully
+[2026-01-06 05:39:09] [SUCCESS] Subscribed to all topics
+[2026-01-06 05:39:09] [INFO] ==========================================
+[2026-01-06 05:39:09] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-06 05:39:09] [INFO] Press Ctrl+C to stop
+[2026-01-06 05:39:09] [INFO] ==========================================
+
+[2026-01-06 05:42:15] [INFO] ==========================================
+[2026-01-06 05:42:15] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-06 05:42:15] [INFO] ==========================================
+[2026-01-06 05:42:15] [SUCCESS] Database connected
+[2026-01-06 05:42:15] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-06 05:42:16] [SUCCESS] MQTT connected successfully
+[2026-01-06 05:42:16] [SUCCESS] Subscribed to all topics
+[2026-01-06 05:42:16] [INFO] ==========================================
+[2026-01-06 05:42:16] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-06 05:42:16] [INFO] Press Ctrl+C to stop
+[2026-01-06 05:42:16] [INFO] ==========================================
+
+[2026-01-06 17:22:13] [INFO] ==========================================
+[2026-01-06 17:22:13] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-06 17:22:13] [INFO] ==========================================
+[2026-01-06 17:22:13] [SUCCESS] Database connected
+[2026-01-06 17:22:13] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-06 17:22:14] [SUCCESS] MQTT connected successfully
+[2026-01-06 17:22:14] [SUCCESS] Subscribed to all topics
+[2026-01-06 17:22:14] [INFO] ==========================================
+[2026-01-06 17:22:14] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-06 17:22:14] [INFO] Press Ctrl+C to stop
+[2026-01-06 17:22:14] [INFO] ==========================================
+
