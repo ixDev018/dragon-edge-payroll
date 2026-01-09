@@ -1,0 +1,76 @@
+================================================================================
+                        PAYROLL SYSTEM - DEVELOPER TOOLS
+================================================================================
+
+This project uses a custom "Native PHP" migration system that mimics Laravel. 
+Since we are not using the Laravel framework, we cannot use "php artisan". 
+
+Instead, we use the following custom Batch scripts (Windows) to manage the 
+database and generate files.
+
+--------------------------------------------------------------------------------
+1. ONE-TIME SETUP (IMPORTANT)
+--------------------------------------------------------------------------------
+Before running any commands, you must configure your database connection.
+
+1. Open the file "migrate.php".
+2. Open the file "tinker.php".
+3. In BOTH files, edit the configuration section at the top:
+
+   $host = '127.0.0.1';
+   $db   = 'payrollcapsdb';  <-- Make sure this matches your local DB name
+   $user = 'root';           <-- Your XAMPP user
+   $pass = '';               <-- Your XAMPP password
+
+--------------------------------------------------------------------------------
+2. AVAILABLE COMMANDS
+--------------------------------------------------------------------------------
+Run these commands in your VS Code terminal (PowerShell).
+Note: You must include ".\" before the command.
+
+COMMAND: .\migrate
+USAGE:   .\migrate
+DETAILS: Checks the "migrations" table in your database and runs any pending 
+         migration files found in the /migrations folder. 
+         Run this after pulling changes from GitHub.
+
+COMMAND: .\tinker
+USAGE:   .\tinker
+DETAILS: Opens an interactive PHP shell (REPL).
+         - Type "exit" to quit.
+         - You can run raw SQL queries using: sql('SELECT * FROM table')
+
+COMMAND: .\make
+USAGE:   .\make migration_name
+EXAMPLE: .\make create_salary_table
+DETAILS: Generates a new migration file in the /migrations folder with the 
+         correct timestamp prefix.
+         ALWAYS use this command to create files (do not create them manually).
+
+--------------------------------------------------------------------------------
+3. TYPICAL WORKFLOW
+--------------------------------------------------------------------------------
+A. When you start working or pull new code:
+   1. git pull origin main
+   2. .\migrate  (To ensure your DB has the latest tables)
+
+B. When you need to create a new table:
+   1. .\make create_inventory_table
+   2. Open the new file in /migrations and add your SQL code in the up() function.
+   3. .\migrate
+
+--------------------------------------------------------------------------------
+4. TROUBLESHOOTING
+--------------------------------------------------------------------------------
+* ERROR: "Access denied for user..."
+  SOLUTION: You forgot to edit the $user/$pass in migrate.php or tinker.php.
+
+* ERROR: "Unknown database..."
+  SOLUTION: Create the empty database in phpMyAdmin first, then check the $db 
+  name in the scripts.
+
+* ERROR: "Class not found..."
+  SOLUTION: Do not rename migration files manually. The filename (timestamp) 
+  must match the logic in the script. Use .\make to generate files safely.
+
+================================================================================

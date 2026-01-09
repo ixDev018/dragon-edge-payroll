@@ -1,0 +1,305 @@
+Folder PATH listing for volume Windows
+Volume serial number is F67B-B29E
+C:.
+|   structure.txt
+|   
+\---payrollsystemcaps
+    |   accounts.php
+    |   add_department.php
+    |   add_designation.php
+    |   add_employee.php
+    |   add_shift.php
+    |   admin_register.php
+    |   APP_attendance.php
+    |   APP_dashboard.php
+    |   APP_forgot_password.php
+    |   APP_index.php
+    |   APP_logout.php
+    |   APP_payslip.php
+    |   APP_register.php
+    |   APP_request-leave.php
+    |   APP_reset_password.php
+    |   APP_sidebar.php
+    |   archive_employee.php
+    |   attendance-process.php
+    |   attendance.php
+    |   attendance_logs.php
+    |   attendance_summary.php
+    |   attendance_summary_employee.php
+    |   auth_finish.php
+    |   auth_start.php
+    |   bio.php
+    |   branch.php
+    |   composer.json
+    |   composer.lock
+    |   config.php
+    |   dashboard.php
+    |   database.php
+    |   db_connection.php
+    |   debug_auth_finish.log
+    |   debug_auth_finish_challenge.log
+    |   debug_auth_start_challenge.log
+    |   debug_auth_start_output.log
+    |   debug_challenge_compare.log
+    |   debug_client_hex.txt
+    |   debug_cred_dump.log
+    |   debug_php_fatal.log
+    |   debug_register_finish_error.log
+    |   debug_session_finish.txt
+    |   debug_session_id.log
+    |   delete_branch.php
+    |   delete_department.php
+    |   delete_designation.php
+    |   delete_shift.php
+    |   departments.php
+    |   designations.php
+    |   display_logs.php
+    |   employees.php
+    |   employee_register_api.php
+    |   fetch_attendance.php
+    |   fetch_branches.php
+    |   fetch_departments.php
+    |   fetch_departments_dropdown.php
+    |   fetch_designations.php
+    |   fetch_designations1.php
+    |   fetch_designation_details.php
+    |   fetch_dropdown_data.php
+    |   fetch_employee_logs.php
+    |   fetch_employee_payslip.php
+    |   fetch_shifts.php
+    |   fetch_shift_details.php
+    |   find_employee_id.php
+    |   fix_password.php
+    |   forgot_password.php
+    |   generate_payroll.php
+    |   generate_payslip.php
+    |   get_department.php
+    |   get_employee_details.php
+    |   helpers.php
+    |   index.php
+    |   leave.php
+    |   login.php
+    |   logout.php
+    |   payroll.php
+    |   payrollsystemcaps.sln
+    |   payroll_api.php
+    |   payroll_data.php
+    |   payroll_master.php
+    |   payslip.php
+    |   php_error.log
+    |   record_attendance.php
+    |   register.php
+    |   register_fingerprint.php
+    |   register_finish.php
+    |   register_start.php
+    |   save_branch.php
+    |   save_payroll.php
+    |   shift.php
+    |   sidebar.php
+    |   tempCodeRunnerFile.php
+    |   timezone_test.php
+    |   update_branch.php
+    |   update_department.php
+    |   update_designation.php
+    |   update_employee_process.php
+    |   update_leave_status.php
+    |   update_shift.php
+    |   view_branch.php
+    |   view_employee.php
+    |   view_payslip.php
+    |   
+    +---.vscode
+    |       settings.json
+    |       
+    +---icons
+    |       branch.png
+    |       budget.png
+    |       chat.png
+    |       chatt.png
+    |       customer.png
+    |       dashboard.png
+    |       department.png
+    |       design-thinking.png
+    |       employee.png
+    |       government.png
+    |       group.png
+    |       leave.png
+    |       live-chat.png
+    |       log-out.png
+    |       report.png
+    |       shift.png
+    |       summer-holidays.png
+    |       tax.png
+    |       travel-bag.png
+    |       wallet.png
+    |       
+    +---images
+    |       bg.jpg
+    |       bg1.jpg
+    |       login.jpg
+    |       logo.png
+    |       
+    +---PHPMailer
+    |   |   .editorconfig
+    |   |   COMMITMENT
+    |   |   composer.json
+    |   |   Exception.php
+    |   |   get_oauth_token.php
+    |   |   LICENSE
+    |   |   PHPMailer.php
+    |   |   README.md
+    |   |   SECURITY.md
+    |   |   SMTP.php
+    |   |   VERSION
+    |   |   
+    |   +---language
+    |   |       phpmailer.lang-af.php
+    |   |       phpmailer.lang-ar.php
+    |   |       phpmailer.lang-as.php
+    |   |       phpmailer.lang-az.php
+    |   |       phpmailer.lang-ba.php
+    |   |       phpmailer.lang-be.php
+    |   |       phpmailer.lang-bg.php
+    |   |       phpmailer.lang-bn.php
+    |   |       phpmailer.lang-ca.php
+    |   |       phpmailer.lang-cs.php
+    |   |       phpmailer.lang-da.php
+    |   |       phpmailer.lang-de.php
+    |   |       phpmailer.lang-el.php
+    |   |       phpmailer.lang-eo.php
+    |   |       phpmailer.lang-es.php
+    |   |       phpmailer.lang-et.php
+    |   |       phpmailer.lang-fa.php
+    |   |       phpmailer.lang-fi.php
+    |   |       phpmailer.lang-fo.php
+    |   |       phpmailer.lang-fr.php
+    |   |       phpmailer.lang-gl.php
+    |   |       phpmailer.lang-he.php
+    |   |       phpmailer.lang-hi.php
+    |   |       phpmailer.lang-hr.php
+    |   |       phpmailer.lang-hu.php
+    |   |       phpmailer.lang-hy.php
+    |   |       phpmailer.lang-id.php
+    |   |       phpmailer.lang-it.php
+    |   |       phpmailer.lang-ja.php
+    |   |       phpmailer.lang-ka.php
+    |   |       phpmailer.lang-ko.php
+    |   |       phpmailer.lang-ku.php
+    |   |       phpmailer.lang-lt.php
+    |   |       phpmailer.lang-lv.php
+    |   |       phpmailer.lang-mg.php
+    |   |       phpmailer.lang-mn.php
+    |   |       phpmailer.lang-ms.php
+    |   |       phpmailer.lang-nb.php
+    |   |       phpmailer.lang-nl.php
+    |   |       phpmailer.lang-pl.php
+    |   |       phpmailer.lang-pt.php
+    |   |       phpmailer.lang-pt_br.php
+    |   |       phpmailer.lang-ro.php
+    |   |       phpmailer.lang-ru.php
+    |   |       phpmailer.lang-si.php
+    |   |       phpmailer.lang-sk.php
+    |   |       phpmailer.lang-sl.php
+    |   |       phpmailer.lang-sr.php
+    |   |       phpmailer.lang-sr_latn.php
+    |   |       phpmailer.lang-sv.php
+    |   |       phpmailer.lang-tl.php
+    |   |       phpmailer.lang-tr.php
+    |   |       phpmailer.lang-uk.php
+    |   |       phpmailer.lang-ur.php
+    |   |       phpmailer.lang-vi.php
+    |   |       phpmailer.lang-zh.php
+    |   |       phpmailer.lang-zh_cn.php
+    |   |       
+    |   \---src
+    |           DSNConfigurator.php
+    |           Exception.php
+    |           OAuth.php
+    |           OAuthTokenProvider.php
+    |           PHPMailer.php
+    |           POP3.php
+    |           SMTP.php
+    |           
+    +---scripts
+    |       displayPayroll.js
+    |       findMyID.js
+    |       getLogs.js
+    |       toggleTheme.js
+    |       
+    +---stylesheets
+    |       attendance-style.css
+    |       view-payslip-style.css
+    |       
+    +---vendor
+    |   |   autoload.php
+    |   |   
+    |   +---composer
+    |   |       autoload_classmap.php
+    |   |       autoload_namespaces.php
+    |   |       autoload_psr4.php
+    |   |       autoload_real.php
+    |   |       autoload_static.php
+    |   |       ClassLoader.php
+    |   |       installed.json
+    |   |       installed.php
+    |   |       InstalledVersions.php
+    |   |       LICENSE
+    |   |       platform_check.php
+    |   |       
+    |   \---lbuchs
+    |       \---webauthn
+    |           |   .gitignore
+    |           |   composer.json
+    |           |   LICENSE
+    |           |   README.md
+    |           |   
+    |           +---src
+    |           |   |   WebAuthn.php
+    |           |   |   WebAuthnException.php
+    |           |   |   
+    |           |   +---Attestation
+    |           |   |   |   AttestationObject.php
+    |           |   |   |   AuthenticatorData.php
+    |           |   |   |   
+    |           |   |   \---Format
+    |           |   |           AndroidKey.php
+    |           |   |           AndroidSafetyNet.php
+    |           |   |           Apple.php
+    |           |   |           FormatBase.php
+    |           |   |           None.php
+    |           |   |           Packed.php
+    |           |   |           Tpm.php
+    |           |   |           U2f.php
+    |           |   |           
+    |           |   +---Binary
+    |           |   |       ByteBuffer.php
+    |           |   |       
+    |           |   \---CBOR
+    |           |           CborDecoder.php
+    |           |           
+    |           \---_test
+    |               |   client.html
+    |               |   server.php
+    |               |   
+    |               \---rootCertificates
+    |                   |   apple.pem
+    |                   |   globalSign.pem
+    |                   |   googleHardware.pem
+    |                   |   hypersecu.pem
+    |                   |   microsoftTpmCollection.pem
+    |                   |   solo.pem
+    |                   |   solokey_f1.pem
+    |                   |   solokey_r1.pem
+    |                   |   yubico.pem
+    |                   |   
+    |                   \---mds
+    |                           .gitkeep
+    |                           
+    +---vids
+    |       acc.mp4
+    |       emps.mp4
+    |       walk.mp4
+    |       
+    \---webauthn
+            webauthn-client.js
+            

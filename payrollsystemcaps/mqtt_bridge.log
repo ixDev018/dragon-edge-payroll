@@ -1,0 +1,206 @@
+[2026-01-03 17:54:54] [INFO] ==========================================
+[2026-01-03 17:54:54] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 17:54:54] [INFO] ==========================================
+[2026-01-03 17:54:54] [SUCCESS] Database connected
+[2026-01-03 17:54:54] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 17:54:55] [ERROR] MQTT connection failed!
+[2026-01-03 17:56:33] [INFO] ==========================================
+[2026-01-03 17:56:33] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 17:56:33] [INFO] ==========================================
+[2026-01-03 17:56:33] [SUCCESS] Database connected
+[2026-01-03 17:56:33] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 17:56:34] [ERROR] MQTT connection failed!
+[2026-01-03 18:00:56] [INFO] ==========================================
+[2026-01-03 18:00:56] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 18:00:56] [INFO] ==========================================
+[2026-01-03 18:00:56] [SUCCESS] Database connected
+[2026-01-03 18:00:56] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 18:00:58] [SUCCESS] MQTT connected successfully
+[2026-01-03 18:00:58] [SUCCESS] Subscribed to all topics
+[2026-01-03 18:00:58] [INFO] ==========================================
+[2026-01-03 18:00:58] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-03 18:00:58] [INFO] Press Ctrl+C to stop
+[2026-01-03 18:00:58] [INFO] ==========================================
+
+[2026-01-03 18:00:59] [INFO] Device status update received
+[2026-01-03 18:00:59] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:01] [INFO] Device status update received
+[2026-01-03 18:01:01] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:14] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:01:14] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 04:59:19, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:14] [INFO] Raw attendance saved with ID: 1
+[2026-01-03 18:01:14] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:01:19] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:01:19] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 04:59:24, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:19] [INFO] Raw attendance saved with ID: 2
+[2026-01-03 18:01:19] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:01:55] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:01:55] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:00, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:01:55] [INFO] Raw attendance saved with ID: 3
+[2026-01-03 18:01:55] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:02:00] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:02:00] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:05, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:00] [INFO] Raw attendance saved with ID: 4
+[2026-01-03 18:02:00] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:02:02] [INFO] Device status update received
+[2026-01-03 18:02:02] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:03] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:02:03] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:08, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:03] [INFO] Raw attendance saved with ID: 5
+[2026-01-03 18:02:03] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:02:06] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:02:06] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:00:11, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:02:06] [INFO] Raw attendance saved with ID: 6
+[2026-01-03 18:02:06] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-03 18:03:02] [INFO] Device status update received
+[2026-01-03 18:03:02] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:04:02] [INFO] Device status update received
+[2026-01-03 18:04:02] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:05:03] [INFO] Device status update received
+[2026-01-03 18:05:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:06:03] [INFO] Device status update received
+[2026-01-03 18:06:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:07:03] [INFO] Device status update received
+[2026-01-03 18:07:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:08:03] [INFO] Device status update received
+[2026-01-03 18:08:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:09:03] [INFO] Device status update received
+[2026-01-03 18:09:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:10:32] [INFO] Device status update received
+[2026-01-03 18:10:32] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:11:20] [INFO] Device status update received
+[2026-01-03 18:11:20] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:12:03] [INFO] Device status update received
+[2026-01-03 18:12:03] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:22:51] [INFO] ==========================================
+[2026-01-03 18:22:51] [INFO] MQTT Bridge Service Starting...
+[2026-01-03 18:22:51] [INFO] ==========================================
+[2026-01-03 18:22:51] [SUCCESS] Database connected
+[2026-01-03 18:22:51] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-03 18:22:53] [SUCCESS] MQTT connected successfully
+[2026-01-03 18:22:53] [SUCCESS] Subscribed to all topics
+[2026-01-03 18:22:53] [INFO] ==========================================
+[2026-01-03 18:22:53] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-03 18:22:53] [INFO] Press Ctrl+C to stop
+[2026-01-03 18:22:53] [INFO] ==========================================
+
+[2026-01-03 18:22:54] [INFO] Device status update received
+[2026-01-03 18:22:54] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:15] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:23:15] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:21:20, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:15] [INFO] Raw attendance saved with ID: 7
+[2026-01-03 18:23:15] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:23:15] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:23:22] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:23:22] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:21:27, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:22] [INFO] Raw attendance saved with ID: 8
+[2026-01-03 18:23:22] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:23:22] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:23:31] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:23:31] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:21:36, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:23:31] [INFO] Raw attendance saved with ID: 9
+[2026-01-03 18:23:31] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:23:31] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:23:43] [INFO] Device status update received
+[2026-01-03 18:23:43] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:24:46] [INFO] Device status update received
+[2026-01-03 18:24:46] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:25:43] [INFO] Device status update received
+[2026-01-03 18:25:43] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:26:47] [INFO] Device status update received
+[2026-01-03 18:26:47] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:27:10] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:27:10] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:25:15, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:27:10] [INFO] Raw attendance saved with ID: 10
+[2026-01-03 18:27:10] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:27:10] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:27:25] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:27:25] [INFO] Processing attendance: FP_ID=1, Time=2025-12-27 05:25:29, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:27:25] [INFO] Raw attendance saved with ID: 11
+[2026-01-03 18:27:25] [INFO] Employee identified: Pedro Sanchez (ID: 917)
+[2026-01-03 18:27:25] [SUCCESS] ✓ Attendance processed for Pedro Sanchez
+[2026-01-03 18:27:33] [INFO] Device status update received
+[2026-01-03 18:27:33] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:28:34] [INFO] Device status update received
+[2026-01-03 18:28:34] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:29:35] [INFO] Device status update received
+[2026-01-03 18:29:35] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:30:33] [INFO] Device status update received
+[2026-01-03 18:30:33] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:31:44] [INFO] Device status update received
+[2026-01-03 18:31:44] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:32:03] [INFO] Message received on topic: dragonedge/enrollment
+[2026-01-03 18:32:03] [INFO] Processing enrollment: Emp_ID=4, FP_ID=2
+[2026-01-03 18:32:03] [SUCCESS] ✓ Employee Josue Cruz enrolled with Fingerprint ID: 2
+[2026-01-03 18:33:14] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:33:14] [INFO] Processing attendance: FP_ID=2, Time=2025-12-27 05:31:19, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:33:14] [INFO] Raw attendance saved with ID: 12
+[2026-01-03 18:33:14] [INFO] Employee identified: Josue Cruz (ID: 4)
+[2026-01-03 18:33:14] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-03 18:37:31] [INFO] Device status update received
+[2026-01-03 18:37:32] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 18:53:37] [INFO] Message received on topic: dragonedge/attendance
+[2026-01-03 18:53:37] [INFO] Processing attendance: FP_ID=2, Time=2025-12-27 05:51:42, Device=DragonEdge-ESP32-Biometric
+[2026-01-03 18:53:37] [INFO] Raw attendance saved with ID: 13
+[2026-01-03 18:53:37] [INFO] Employee identified: Josue Cruz (ID: 4)
+[2026-01-03 18:53:37] [SUCCESS] ✓ Attendance processed for Josue Cruz
+[2026-01-03 18:53:57] [INFO] Message received on topic: dragonedge/enrollment
+[2026-01-03 18:53:57] [INFO] Processing enrollment: Emp_ID=2, FP_ID=3
+[2026-01-03 18:53:57] [SUCCESS] ✓ Employee Juan Dela Cruz enrolled with Fingerprint ID: 3
+[2026-01-03 18:55:00] [INFO] Message received on topic: dragonedge/enrollment
+[2026-01-03 18:55:00] [INFO] Processing enrollment: Emp_ID=3, FP_ID=4
+[2026-01-03 18:55:00] [SUCCESS] ✓ Employee Maria Clara enrolled with Fingerprint ID: 4
+[2026-01-03 18:58:56] [INFO] Device status update received
+[2026-01-03 18:58:56] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-03 19:25:51] [ERROR] MQTT Error: [66] Transferring data over socket failed: The socket has reached EOF which indicates it has been closed by the broker.
+[2026-01-03 19:25:51] [ERROR] Stack trace: #0 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\vendor\php-mqtt\client\src\MqttClient.php(1259): PhpMqtt\Client\MqttClient->readFromSocket(8192, true)
+#1 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\vendor\php-mqtt\client\src\MqttClient.php(642): PhpMqtt\Client\MqttClient->readAllAvailableDataFromSocket(true)
+#2 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\vendor\php-mqtt\client\src\MqttClient.php(615): PhpMqtt\Client\MqttClient->loopOnce(1767435773.6555, true)
+#3 C:\xampp\htdocs\dragon-edge-payroll\payrollsystemcaps\mqtt_bridge.php(271): PhpMqtt\Client\MqttClient->loop(true)
+#4 {main}
+[2026-01-04 23:19:59] [INFO] ==========================================
+[2026-01-04 23:19:59] [INFO] MQTT Bridge Service Starting...
+[2026-01-04 23:19:59] [INFO] ==========================================
+[2026-01-04 23:19:59] [SUCCESS] Database connected
+[2026-01-04 23:19:59] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-04 23:20:00] [SUCCESS] MQTT connected successfully
+[2026-01-04 23:20:00] [SUCCESS] Subscribed to all topics
+[2026-01-04 23:20:00] [INFO] ==========================================
+[2026-01-04 23:20:00] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-04 23:20:00] [INFO] Press Ctrl+C to stop
+[2026-01-04 23:20:00] [INFO] ==========================================
+
+[2026-01-04 23:20:00] [INFO] Device status update received
+[2026-01-04 23:20:00] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-04 23:23:59] [INFO] Device status update received
+[2026-01-04 23:23:59] [INFO] Device status updated: DragonEdge-ESP32-Biometric
+[2026-01-04 23:44:32] [INFO] ==========================================
+[2026-01-04 23:44:32] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-04 23:44:32] [INFO] ==========================================
+[2026-01-04 23:44:32] [SUCCESS] Database connected
+[2026-01-04 23:44:32] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-04 23:44:33] [SUCCESS] MQTT connected successfully
+[2026-01-04 23:44:33] [SUCCESS] Subscribed to all topics
+[2026-01-04 23:44:33] [INFO] ==========================================
+[2026-01-04 23:44:33] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-04 23:44:33] [INFO] Press Ctrl+C to stop
+[2026-01-04 23:44:33] [INFO] ==========================================
+
+[2026-01-04 23:47:59] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:06] [INFO] Status update: Emp_ID=916, Status=admin_authorized
+[2026-01-04 23:48:07] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:11] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:15] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:16] [INFO] Status update: Emp_ID=916, Status=error
+[2026-01-04 23:48:23] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:24] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:25] [INFO] Status update: Emp_ID=916, Status=waiting_admin
+[2026-01-04 23:48:29] [INFO] Status update: Emp_ID=916, Status=admin_authorized
+[2026-01-04 23:48:30] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:33] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:35] [INFO] Status update: Emp_ID=916, Status=scanning
+[2026-01-04 23:48:37] [INFO] Status update: Emp_ID=916, Status=processing
+[2026-01-04 23:48:38] [INFO] Status update: Emp_ID=916, Status=storing
+[2026-01-04 23:48:38] [INFO] Processing enrollment: Emp_ID=916, FP_ID=5
+[2026-01-04 23:48:38] [SUCCESS] ✓ Sherwin Licu enrolled with FP ID: 5
+[2026-01-04 23:48:38] [INFO] Status update: Emp_ID=916, Status=success

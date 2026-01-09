@@ -1,0 +1,4 @@
+2025-10-16T15:16:06+00:00 Column 'public_key' cannot be null
+#0 C:\wamp64\www\payrollsystemcaps\register_finish.php(109): mysqli_stmt->execute()
+#1 {main}
+
