@@ -402,3 +402,520 @@
 [2026-01-06 17:22:14] [INFO] Press Ctrl+C to stop
 [2026-01-06 17:22:14] [INFO] ==========================================
 
+[2026-01-06 18:24:41] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:24:53] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:24:54] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:24:59] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:25:02] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:25:03] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:25:04] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:25:11] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:25:12] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:25:13] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:25:21] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:25:22] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:25:27] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:25:29] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:25:30] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:25:30] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:25:37] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:25:38] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:25:41] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:25:53] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:25:54] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:25:59] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:01] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:04] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:26:05] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:26:17] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:26:21] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:26:21] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:24] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:26] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:27] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:26:27] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:26:36] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 05:24:39
+[2026-01-06 18:26:36] [INFO] Employee identified: Pedro Sanchez
+[2026-01-06 18:26:36] [ERROR] Exception: Unknown column 's.start_time' in 'field list'
+[2026-01-06 18:26:38] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:26:42] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:26:43] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:43] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:44] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:26:46] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:26:46] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:26:52] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:26:53] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:26:54] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:26:58] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:26:59] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:27:01] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:27:03] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:27:05] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:27:05] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:28:01] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:28:04] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:28:05] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:28:06] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:28:08] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:28:10] [INFO] Status update: Emp_ID=918, Status=processing
+[2026-01-06 18:28:10] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:34:22] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:34:29] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:34:30] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:34:31] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:34:35] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:34:35] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:34:36] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:34:44] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:34:44] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:34:44] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:34:45] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:35:20] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:35:22] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:35:23] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:35:24] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:35:28] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:35:31] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:35:32] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:35:38] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:35:39] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:35:41] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:36:58] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:37:01] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:37:03] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:37:17] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:37:18] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:37:23] [INFO] Status update: Emp_ID=918, Status=admin_authorized
+[2026-01-06 18:37:24] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:37:27] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:37:30] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:37:31] [INFO] Status update: Emp_ID=918, Status=error
+[2026-01-06 18:37:33] [INFO] Status update: Emp_ID=918, Status=scanning
+[2026-01-06 18:37:37] [INFO] Status update: Emp_ID=918, Status=storing
+[2026-01-06 18:37:38] [INFO] Status update: Emp_ID=918, Status=success
+[2026-01-06 18:37:39] [INFO] Processing attendance: FP_ID=6, Time=2025-12-30 05:35:44
+[2026-01-06 18:37:39] [ERROR] Employee not found for fingerprint ID: 6
+[2026-01-06 18:37:50] [INFO] Status update: Emp_ID=918, Status=waiting_admin
+[2026-01-06 18:38:50] [INFO] Status update: Emp_ID=918, Status=timeout
+[2026-01-06 18:41:36] [INFO] Status update: Emp_ID=919, Status=waiting_admin
+[2026-01-06 18:41:39] [INFO] Status update: Emp_ID=919, Status=admin_authorized
+[2026-01-06 18:41:39] [INFO] Status update: Emp_ID=919, Status=scanning
+[2026-01-06 18:41:41] [INFO] Status update: Emp_ID=919, Status=scanning
+[2026-01-06 18:41:43] [INFO] Status update: Emp_ID=919, Status=scanning
+[2026-01-06 18:41:47] [INFO] Status update: Emp_ID=919, Status=waiting_admin
+[2026-01-06 18:41:49] [INFO] Status update: Emp_ID=919, Status=storing
+[2026-01-06 18:41:51] [INFO] Status update: Emp_ID=919, Status=success
+[2026-01-06 18:45:20] [INFO] Status update: Emp_ID=920, Status=waiting_admin
+[2026-01-06 18:45:27] [INFO] Status update: Emp_ID=920, Status=scanning
+[2026-01-06 18:45:29] [INFO] Status update: Emp_ID=920, Status=scanning
+[2026-01-06 18:48:27] [INFO] Status update: Emp_ID=920, Status=waiting_admin
+[2026-01-06 18:48:30] [INFO] Status update: Emp_ID=920, Status=admin_authorized
+[2026-01-06 18:48:31] [INFO] Status update: Emp_ID=920, Status=scanning
+[2026-01-06 18:48:34] [INFO] Status update: Emp_ID=920, Status=scanning
+[2026-01-06 18:48:36] [INFO] Status update: Emp_ID=920, Status=scanning
+[2026-01-06 18:48:38] [INFO] Status update: Emp_ID=920, Status=processing
+[2026-01-06 18:48:38] [INFO] Status update: Emp_ID=920, Status=storing
+[2026-01-06 18:48:38] [INFO] Processing enrollment: Emp_ID=920, FP_ID=2
+[2026-01-06 18:48:38] [SUCCESS] ✓ Haidee Haid enrolled with FP ID: 2
+[2026-01-06 18:48:38] [INFO] Status update: Emp_ID=920, Status=success
+[2026-01-06 18:57:23] [INFO] ==========================================
+[2026-01-06 18:57:23] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-06 18:57:23] [INFO] ==========================================
+[2026-01-06 18:57:23] [SUCCESS] Database connected
+[2026-01-06 18:57:23] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-06 18:57:24] [SUCCESS] MQTT connected successfully
+[2026-01-06 18:57:24] [SUCCESS] Subscribed to all topics
+[2026-01-06 18:57:24] [INFO] ==========================================
+[2026-01-06 18:57:24] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-06 18:57:24] [INFO] Press Ctrl+C to stop
+[2026-01-06 18:57:24] [INFO] ==========================================
+
+[2026-01-06 19:00:09] [INFO] 🗑️  Delete request for Fingerprint ID: 2
+[2026-01-06 19:00:09] [SUCCESS] ✓ Fingerprint ID 2 removed from database
+[2026-01-06 19:01:31] [INFO] 🗑️  CLEAR ALL fingerprints request received
+[2026-01-06 19:01:31] [SUCCESS] ✓ All fingerprint IDs cleared from database
+[2026-01-06 19:03:01] [INFO] 🗑️  CLEAR ALL fingerprints request received
+[2026-01-06 19:03:01] [SUCCESS] ✓ All fingerprint IDs cleared from database
+[2026-01-06 19:08:55] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-06 19:09:00] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-06 19:09:01] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-06 19:09:06] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-06 19:09:06] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-06 19:09:07] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-06 19:09:07] [INFO] Status update: Emp_ID=917, Status=storing
+[2026-01-06 19:09:07] [INFO] Processing enrollment: Emp_ID=917, FP_ID=1
+[2026-01-06 19:09:07] [SUCCESS] ✓ Pedro Sanchez enrolled with FP ID: 1
+[2026-01-06 19:09:12] [INFO] Status update: Emp_ID=917, Status=success
+[2026-01-06 19:18:20] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:19:19] [INFO] Status update: Emp_ID=922, Status=timeout
+[2026-01-06 19:19:25] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:19:26] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:19:27] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:19:29] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:19:36] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-06 19:19:37] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-06 19:19:48] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-06 19:19:52] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-06 19:19:52] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-06 19:19:52] [INFO] Status update: Emp_ID=922, Status=error
+[2026-01-06 19:20:03] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:20:18] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-06 19:20:19] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-06 19:20:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-06 19:20:22] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-06 19:21:02] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-06 19:21:13] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-06 19:21:13] [INFO] Status update: Emp_ID=922, Status=storing
+[2026-01-06 19:21:13] [INFO] Processing enrollment: Emp_ID=922, FP_ID=2
+[2026-01-06 19:21:13] [SUCCESS] ✓ Haidee Haid enrolled with FP ID: 2
+[2026-01-06 19:21:13] [INFO] Status update: Emp_ID=922, Status=success
+[2026-01-06 19:21:34] [INFO] 🗑️  CLEAR ALL fingerprints request received
+[2026-01-06 19:21:34] [SUCCESS] ✓ All fingerprint IDs cleared from database
+[2026-01-06 19:21:45] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 04:30:05] [INFO] ==========================================
+[2026-01-07 04:30:05] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-07 04:30:05] [INFO] ==========================================
+[2026-01-07 04:30:05] [SUCCESS] Database connected
+[2026-01-07 04:30:05] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-07 04:30:06] [SUCCESS] MQTT connected successfully
+[2026-01-07 04:30:06] [SUCCESS] Subscribed to all topics
+[2026-01-07 04:30:06] [INFO] ==========================================
+[2026-01-07 04:30:06] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-07 04:30:06] [INFO] Press Ctrl+C to stop
+[2026-01-07 04:30:06] [INFO] ==========================================
+
+[2026-01-07 04:30:55] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 04:31:13] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:31:15] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:31:59] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 04:32:09] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-07 04:32:10] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:32:10] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:32:14] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:32:18] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:32:22] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 04:32:22] [INFO] Status update: Emp_ID=922, Status=error
+[2026-01-07 04:37:55] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 04:38:18] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:25] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:27] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 04:38:30] [INFO] Status update: Emp_ID=922, Status=retry
+[2026-01-07 04:38:35] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 04:38:35] [INFO] Status update: Emp_ID=922, Status=storing
+[2026-01-07 04:38:35] [INFO] Processing enrollment: Emp_ID=922, FP_ID=1
+[2026-01-07 04:38:35] [SUCCESS] ✓ Haidee Haid enrolled with FP ID: 1
+[2026-01-07 04:38:35] [INFO] Status update: Emp_ID=922, Status=success
+[2026-01-07 04:39:02] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 15:37:06
+[2026-01-07 04:39:02] [INFO] Employee identified: Haidee Haid
+[2026-01-07 04:39:02] [ERROR] Exception: Unknown column 's.start_time' in 'field list'
+[2026-01-07 04:39:47] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 15:37:51
+[2026-01-07 04:39:47] [INFO] Employee identified: Haidee Haid
+[2026-01-07 04:39:47] [ERROR] Exception: Unknown column 's.start_time' in 'field list'
+[2026-01-07 04:43:16] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 15:41:19
+[2026-01-07 04:43:16] [INFO] Employee identified: Haidee Haid
+[2026-01-07 04:43:16] [ERROR] Exception: Unknown column 's.start_time' in 'field list'
+[2026-01-07 04:43:29] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 15:41:33
+[2026-01-07 04:43:29] [INFO] Employee identified: Haidee Haid
+[2026-01-07 04:43:29] [ERROR] Exception: Unknown column 's.start_time' in 'field list'
+[2026-01-07 04:50:12] [INFO] ==========================================
+[2026-01-07 04:50:12] [INFO] Enhanced MQTT Bridge Starting...
+[2026-01-07 04:50:12] [INFO] ==========================================
+[2026-01-07 04:50:12] [SUCCESS] Database connected
+[2026-01-07 04:50:12] [INFO] Connecting to MQTT broker: fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud:8883
+[2026-01-07 04:50:13] [SUCCESS] MQTT connected successfully
+[2026-01-07 04:50:13] [SUCCESS] Subscribed to all topics
+[2026-01-07 04:50:13] [INFO] ==========================================
+[2026-01-07 04:50:13] [INFO] MQTT Bridge running. Waiting for messages...
+[2026-01-07 04:50:13] [INFO] Press Ctrl+C to stop
+[2026-01-07 04:50:13] [INFO] ==========================================
+
+[2026-01-07 04:50:32] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 15:48:36
+[2026-01-07 04:50:32] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 04:50:32] [INFO] Scan count today: 5 → TIME IN
+[2026-01-07 04:50:32] [SUCCESS] ✓ TIME IN recorded for Haidee Haid at 2025-12-30 15:48:36
+[2026-01-07 04:52:10] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 15:50:14
+[2026-01-07 04:52:10] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 04:52:10] [INFO] Scan count today: 6 → TIME OUT
+[2026-01-07 04:52:10] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 15:50:14
+[2026-01-07 04:57:59] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 04:59:01] [INFO] Status update: Emp_ID=917, Status=timeout
+[2026-01-07 05:03:29] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:03:32] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:03:33] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:03:33] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:03:44] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:03:46] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:03:49] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:03:49] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:03:52] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:03:56] [INFO] Status update: Emp_ID=917, Status=retry
+[2026-01-07 05:04:03] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:04:04] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:02:08
+[2026-01-07 05:04:04] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:04:04] [INFO] Scan count today: 7 → TIME IN
+[2026-01-07 05:04:04] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 16:02:08
+[2026-01-07 05:04:09] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:04:10] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:04:12] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:04:24] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:04:25] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:04:25] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:04:41] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:04:48] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:04:50] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:04:57] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:05:02] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:05:05] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:05:06] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:05:06] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:11:50] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:11:57] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:11:57] [INFO] Status update: Emp_ID=917, Status=ready
+[2026-01-07 05:11:59] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:11:59] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:11:59] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:12:04] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:12:06] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:12:08] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:12:08] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:12:45] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:12:53] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:12:53] [INFO] Status update: Emp_ID=917, Status=ready
+[2026-01-07 05:12:55] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:12:55] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:12:55] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:13:00] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:13:02] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:13:04] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:13:04] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:14:39] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:14:44] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:14:44] [INFO] Status update: Emp_ID=917, Status=ready
+[2026-01-07 05:14:46] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:14:46] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:14:46] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:14:51] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:14:52] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:14:55] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:14:55] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:15:32] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:15:37] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:15:37] [INFO] Status update: Emp_ID=917, Status=ready
+[2026-01-07 05:15:39] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:15:39] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:15:39] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:15:43] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:15:45] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:15:47] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:15:47] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:17:22] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:17:31] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:17:32] [INFO] Status update: Emp_ID=917, Status=ready
+[2026-01-07 05:17:34] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:34] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:34] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:46] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:48] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:49] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:17:49] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:52] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:55] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:17:57] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:18:03] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:16:06
+[2026-01-07 05:18:03] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:18:03] [INFO] Scan count today: 8 → TIME OUT
+[2026-01-07 05:18:03] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 16:16:06
+[2026-01-07 05:18:07] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:16:10
+[2026-01-07 05:18:07] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:18:07] [INFO] Scan count today: 9 → TIME IN
+[2026-01-07 05:18:07] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 16:16:10
+[2026-01-07 05:18:10] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:16:14
+[2026-01-07 05:18:10] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:18:10] [INFO] Scan count today: 10 → TIME OUT
+[2026-01-07 05:18:10] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 16:16:14
+[2026-01-07 05:18:47] [INFO] 🗑️  CLEAR ALL fingerprints request received
+[2026-01-07 05:18:47] [SUCCESS] ✓ All fingerprint IDs cleared from database
+[2026-01-07 05:18:58] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:19:58] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:20:03] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-07 05:20:03] [INFO] Status update: Emp_ID=922, Status=ready
+[2026-01-07 05:20:05] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:20:05] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:20:05] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:20:12] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:20:14] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:20:16] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 05:20:16] [INFO] Status update: Emp_ID=922, Status=error
+[2026-01-07 05:31:14] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:31:21] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-07 05:31:21] [INFO] Status update: Emp_ID=922, Status=ready
+[2026-01-07 05:31:23] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:23] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:23] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:27] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:29] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:40] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 05:31:40] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:42] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:31:48] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:29:52
+[2026-01-07 05:31:48] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-07 05:31:53] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:29:57
+[2026-01-07 05:31:53] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-07 05:35:39] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:37:40] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:35:43
+[2026-01-07 05:37:41] [ERROR] Employee not found for fingerprint ID: 1
+[2026-01-07 05:37:41] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:37:43] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:37:55] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-07 05:37:55] [INFO] Status update: Emp_ID=922, Status=ready
+[2026-01-07 05:37:56] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:37:56] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:37:56] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:03] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:03] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:07] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 05:38:07] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:14] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:23] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:25] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:38:27] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 05:38:28] [INFO] Status update: Emp_ID=922, Status=storing
+[2026-01-07 05:38:50] [INFO] Status update: Emp_ID=922, Status=verifying
+[2026-01-07 05:38:50] [INFO] Status update: Emp_ID=922, Status=verifying
+[2026-01-07 05:38:50] [INFO] Processing enrollment: Emp_ID=922, FP_ID=1
+[2026-01-07 05:38:50] [SUCCESS] ✓ Haidee Haid enrolled with FP ID: 1
+[2026-01-07 05:38:50] [INFO] Status update: Emp_ID=922, Status=success
+[2026-01-07 05:44:08] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:44:23] [INFO] Status update: Emp_ID=917, Status=admin_authorized
+[2026-01-07 05:44:23] [INFO] Status update: Emp_ID=917, Status=ready
+[2026-01-07 05:44:26] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:26] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:26] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:33] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:35] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:39] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:44:40] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:42] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:53] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:56] [INFO] Status update: Emp_ID=917, Status=scanning
+[2026-01-07 05:44:59] [INFO] Status update: Emp_ID=917, Status=processing
+[2026-01-07 05:44:59] [INFO] Status update: Emp_ID=917, Status=storing
+[2026-01-07 05:44:59] [INFO] Status update: Emp_ID=917, Status=verifying
+[2026-01-07 05:45:01] [INFO] Status update: Emp_ID=917, Status=verifying
+[2026-01-07 05:45:28] [INFO] Status update: Emp_ID=917, Status=error
+[2026-01-07 05:45:34] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:45:35] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:46:35] [INFO] Status update: Emp_ID=917, Status=timeout
+[2026-01-07 05:47:33] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:48:33] [INFO] Status update: Emp_ID=917, Status=timeout
+[2026-01-07 05:48:39] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:48:41] [INFO] Status update: Emp_ID=917, Status=waiting_admin
+[2026-01-07 05:49:42] [INFO] Status update: Emp_ID=917, Status=timeout
+[2026-01-07 05:54:16] [INFO] 🗑️  CLEAR ALL fingerprints request received
+[2026-01-07 05:54:16] [SUCCESS] ✓ All fingerprint IDs cleared from database
+[2026-01-07 05:56:08] [INFO] Status update: Emp_ID=922, Status=waiting_admin
+[2026-01-07 05:56:11] [INFO] Status update: Emp_ID=922, Status=admin_authorized
+[2026-01-07 05:56:12] [INFO] Status update: Emp_ID=922, Status=ready
+[2026-01-07 05:56:15] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:15] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:15] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:20] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:22] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:25] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 05:56:25] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:28] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:32] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:34] [INFO] Status update: Emp_ID=922, Status=scanning
+[2026-01-07 05:56:38] [INFO] Status update: Emp_ID=922, Status=processing
+[2026-01-07 05:56:38] [INFO] Status update: Emp_ID=922, Status=storing
+[2026-01-07 05:56:38] [INFO] Status update: Emp_ID=922, Status=verifying
+[2026-01-07 05:56:39] [INFO] Status update: Emp_ID=922, Status=verifying
+[2026-01-07 05:56:43] [INFO] Processing enrollment: Emp_ID=922, FP_ID=1
+[2026-01-07 05:56:43] [SUCCESS] ✓ Haidee Haid enrolled with FP ID: 1
+[2026-01-07 05:56:43] [INFO] Status update: Emp_ID=922, Status=success
+[2026-01-07 05:57:03] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:55:07
+[2026-01-07 05:57:03] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:57:03] [INFO] Scan count today: 14 → TIME OUT
+[2026-01-07 05:57:03] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 16:55:07
+[2026-01-07 05:57:10] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:55:14
+[2026-01-07 05:57:10] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:57:10] [INFO] Scan count today: 15 → TIME IN
+[2026-01-07 05:57:10] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 16:55:14
+[2026-01-07 05:57:15] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 16:55:19
+[2026-01-07 05:57:15] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 05:57:15] [INFO] Scan count today: 16 → TIME OUT
+[2026-01-07 05:57:15] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 16:55:19
+[2026-01-07 06:03:21] [INFO] Status update: Emp_ID=923, Status=waiting_admin
+[2026-01-07 06:03:30] [INFO] Status update: Emp_ID=923, Status=admin_authorized
+[2026-01-07 06:03:31] [INFO] Status update: Emp_ID=923, Status=ready
+[2026-01-07 06:03:34] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:03:34] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:03:34] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:03:47] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:03:49] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:03:53] [INFO] Status update: Emp_ID=923, Status=processing
+[2026-01-07 06:03:54] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:03:56] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:04:08] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:04:10] [INFO] Status update: Emp_ID=923, Status=scanning
+[2026-01-07 06:04:13] [INFO] Status update: Emp_ID=923, Status=processing
+[2026-01-07 06:04:14] [INFO] Status update: Emp_ID=923, Status=storing
+[2026-01-07 06:04:14] [INFO] Status update: Emp_ID=923, Status=verifying
+[2026-01-07 06:04:15] [INFO] Status update: Emp_ID=923, Status=verifying
+[2026-01-07 06:04:47] [INFO] Processing enrollment: Emp_ID=923, FP_ID=2
+[2026-01-07 06:04:47] [SUCCESS] ✓ Robert Sanchez enrolled with FP ID: 2
+[2026-01-07 06:04:47] [INFO] Status update: Emp_ID=923, Status=success
+[2026-01-07 06:05:36] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:03:39
+[2026-01-07 06:05:36] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:05:36] [INFO] Scan count today: 17 → TIME IN
+[2026-01-07 06:05:36] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 17:03:39
+[2026-01-07 06:05:45] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:03:49
+[2026-01-07 06:05:45] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:05:45] [INFO] Scan count today: 18 → TIME OUT
+[2026-01-07 06:05:45] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 17:03:49
+[2026-01-07 06:06:02] [INFO] Processing attendance: FP_ID=2, Time=2025-12-30 17:04:05
+[2026-01-07 06:06:02] [INFO] Employee identified: Robert Sanchez (DB ID: 923)
+[2026-01-07 06:06:02] [INFO] Scan count today: 1 → TIME IN
+[2026-01-07 06:06:02] [SUCCESS] ✓ TIME IN recorded for Robert Sanchez at 2025-12-30 17:04:05
+[2026-01-07 06:06:13] [INFO] Processing attendance: FP_ID=2, Time=2025-12-30 17:04:17
+[2026-01-07 06:06:13] [INFO] Employee identified: Robert Sanchez (DB ID: 923)
+[2026-01-07 06:06:13] [INFO] Scan count today: 2 → TIME OUT
+[2026-01-07 06:06:13] [SUCCESS] ✓ TIME OUT recorded for Robert Sanchez at 2025-12-30 17:04:17
+[2026-01-07 06:08:18] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:06:22
+[2026-01-07 06:08:18] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:08:18] [INFO] Scan count today: 19 → TIME IN
+[2026-01-07 06:08:18] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 17:06:22
+[2026-01-07 06:08:24] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:06:27
+[2026-01-07 06:08:24] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:08:24] [INFO] Scan count today: 20 → TIME OUT
+[2026-01-07 06:08:24] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 17:06:27
+[2026-01-07 06:08:29] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:06:33
+[2026-01-07 06:08:29] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:08:29] [INFO] Scan count today: 21 → TIME IN
+[2026-01-07 06:08:29] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 17:06:33
+[2026-01-07 06:08:33] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:06:37
+[2026-01-07 06:08:33] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:08:33] [INFO] Scan count today: 22 → TIME OUT
+[2026-01-07 06:08:33] [SUCCESS] ✓ TIME OUT recorded for Haidee Haid at 2025-12-30 17:06:37
+[2026-01-07 06:08:36] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:06:40
+[2026-01-07 06:08:36] [INFO] Employee identified: Haidee Haid (DB ID: 922)
+[2026-01-07 06:08:36] [INFO] Scan count today: 23 → TIME IN
+[2026-01-07 06:08:36] [SUCCESS] ✓ TIME IN updated for Haidee Haid at 2025-12-30 17:06:40
+[2026-01-07 06:08:52] [INFO] Processing attendance: FP_ID=2, Time=2025-12-30 17:06:56
+[2026-01-07 06:08:52] [INFO] Employee identified: Robert Sanchez (DB ID: 923)
+[2026-01-07 06:08:52] [INFO] Scan count today: 3 → TIME IN
+[2026-01-07 06:08:52] [SUCCESS] ✓ TIME IN updated for Robert Sanchez at 2025-12-30 17:06:56
+[2026-01-07 18:09:24] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:07:34
+[2026-01-07 18:09:29] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:07:39
+[2026-01-07 18:09:33] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:07:43
+[2026-01-07 18:09:36] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:07:46
+[2026-01-07 18:09:39] [INFO] Processing attendance: FP_ID=1, Time=2025-12-30 17:07:50
+[2026-01-07 06:10:51] [ERROR] MQTT Error: [66] Transferring data over socket failed: The socket has reached EOF which indicates it has been closed by the broker.

@@ -2,15 +2,64 @@
     session_start();
     include 'sidebar.php';
     include 'db_connection.php';
+    require __DIR__ . '/vendor/autoload.php';
 
-    // Simple Delete Logic
+    use PhpMqtt\Client\MqttClient;
+    use PhpMqtt\Client\ConnectionSettings;
+
+    // Delete Logic with Fingerprint Removal
     if (isset($_GET['delete_id'])) {
         $id = $_GET['delete_id'];
+        
+        // First, get the fingerprint_id before deleting
+        $stmt = $conn->prepare("SELECT fingerprint_id, first_name, last_name FROM employees WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $employee = $result->fetch_assoc();
+        
+        if ($employee && $employee['fingerprint_id']) {
+            $fingerprint_id = $employee['fingerprint_id'];
+            $name = $employee['first_name'] . ' ' . $employee['last_name'];
+            
+            // Send delete command to ESP32 via MQTT
+            try {
+                $mqtt_server = "fad64f7d54c740f7b5b3679bdba0f4cf.s1.eu.hivemq.cloud";
+                $mqtt_port = 8883;
+                $mqtt_user = "dragonedge";
+                $mqtt_pass = "DragonEdge2025!";
+                
+                $connectionSettings = (new ConnectionSettings)
+                    ->setUsername($mqtt_user)
+                    ->setPassword($mqtt_pass)
+                    ->setUseTls(true)
+                    ->setTlsSelfSignedAllowed(true)
+                    ->setTlsVerifyPeer(false)
+                    ->setTlsVerifyPeerName(false);
+                
+                $mqtt = new MqttClient($mqtt_server, $mqtt_port, "DragonEdge-Delete-" . uniqid());
+                $mqtt->connect($connectionSettings, true);
+                
+                $message = json_encode([
+                    'action' => 'delete',
+                    'fingerprint_id' => $fingerprint_id,
+                    'timestamp' => date('Y-m-d H:i:s')
+                ]);
+                
+                $mqtt->publish('dragonedge/fingerprint/delete', $message, 0);
+                $mqtt->disconnect();
+            } catch (Exception $e) {
+                // Log error but continue with database deletion
+                error_log("MQTT delete failed: " . $e->getMessage());
+            }
+        }
+        
+        // Delete from database
         $stmt = $conn->prepare("DELETE FROM employees WHERE id = ?");
         $stmt->bind_param("i", $id);
         if ($stmt->execute()) {
             echo "<script>
-                Swal.fire('Deleted!', 'Employee has been removed.', 'success')
+                Swal.fire('Deleted!', 'Employee and fingerprint removed.', 'success')
                 .then(() => { window.location.href = 'employees.php'; });
             </script>";
         } else {
@@ -25,7 +74,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Employees List</title>
-    <!-- Use the same CSS/JS as your dashboard for consistency -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -88,6 +136,19 @@
         }
         .btn-view { background: #17a2b8; }
         .btn-delete { background: #dc3545; }
+        .btn-clear-all {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .btn-clear-all:hover {
+            background: #ff5252;
+        }
     </style>
 </head>
 <body>
@@ -95,8 +156,12 @@
 <div class="main-content">
     <div class="header-flex">
         <h1>Employees</h1>
-        <!-- IMPORTANT: This links to the fixed add_employee.php -->
-        <a href="add_employee.php" class="btn-add">+ Add Employee</a>
+        <div>
+            <a href="add_employee.php" class="btn-add">+ Add Employee</a>
+            <button onclick="clearAllFingerprints()" class="btn-clear-all">
+                <i class="fas fa-trash-alt"></i> Clear All Fingerprints
+            </button>
+        </div>
     </div>
 
     <div class="table-container">
@@ -108,26 +173,25 @@
                     <th>Department</th>
                     <th>Position</th>
                     <th>Daily Rate</th>
+                    <th>Fingerprint ID</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                // Select columns that ACTUALLY exist in your database
-                $sql = "SELECT id, employee_id, first_name, last_name, department, position, daily_rate, employment_status FROM employees ORDER BY id DESC";
+                $sql = "SELECT id, employee_id, first_name, last_name, department, position, daily_rate, fingerprint_id, employment_status FROM employees ORDER BY id DESC";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                        // Safe check for missing data
                         $fullName = htmlspecialchars($row['first_name'] . ' ' . $row['last_name']);
                         $dept = htmlspecialchars($row['department'] ?? 'N/A');
                         $pos = htmlspecialchars($row['position'] ?? 'N/A');
                         $rate = number_format($row['daily_rate'], 2);
+                        $fpId = $row['fingerprint_id'] ? '#' . $row['fingerprint_id'] : '<span style="color:#999">Not enrolled</span>';
                         $status = htmlspecialchars($row['employment_status']);
                         
-                        // Determine badge color
                         $statusClass = ($status == 'regular') ? 'status-regular' : 'status-probationary';
 
                         echo "<tr>";
@@ -136,21 +200,83 @@
                         echo "<td>" . $dept . "</td>";
                         echo "<td>" . $pos . "</td>";
                         echo "<td>₱" . $rate . "</td>";
+                        echo "<td>" . $fpId . "</td>";
                         echo "<td><span class='status-badge $statusClass'>" . ucfirst($status) . "</span></td>";
                         echo "<td>
                                 <a href='add_employee.php?id=" . $row['id'] . "' class='btn-action btn-view'><i class='fas fa-edit'></i> Edit</a>
-                                <a href='employees.php?delete_id=" . $row['id'] . "' class='btn-action btn-delete' onclick='return confirm(\"Are you sure?\")'><i class='fas fa-trash'></i></a>
+                                <a href='#' onclick='deleteEmployee(" . $row['id'] . ", \"" . addslashes($fullName) . "\")' class='btn-action btn-delete'><i class='fas fa-trash'></i></a>
                               </td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='7' style='text-align:center'>No employees found. Click 'Add Employee' to create one.</td></tr>";
+                    echo "<tr><td colspan='8' style='text-align:center'>No employees found.</td></tr>";
                 }
                 ?>
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+function deleteEmployee(id, name) {
+    Swal.fire({
+        title: 'Delete Employee?',
+        html: `This will remove <strong>${name}</strong> and their fingerprint from the sensor.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'employees.php?delete_id=' + id;
+        }
+    });
+}
+
+function clearAllFingerprints() {
+    Swal.fire({
+        title: 'Clear ALL Fingerprints?',
+        html: '⚠️ This will delete <strong>ALL</strong> fingerprints from the ESP32 sensor.<br>Employees will need to re-enroll.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#ff6b6b',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, clear all!',
+        input: 'checkbox',
+        inputPlaceholder: 'I understand this action cannot be undone'
+    }).then((result) => {
+        if (result.isConfirmed && result.value) {
+            fetch('delete_fingerprint_api.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    action: 'clear_all'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire('Cleared!', data.message, 'success')
+                    .then(() => {
+                        // Optionally reload the page to show updated fingerprint status
+                        window.location.reload();
+                    });
+                } else {
+                    Swal.fire('Error', data.message, 'error');
+                }
+            })
+            .catch(error => {
+                Swal.fire('Error', 'Failed to send command: ' + error, 'error');
+            });
+        } else if (result.isConfirmed) {
+            Swal.fire('Cancelled', 'You must confirm to proceed', 'info');
+        }
+    });
+}
+</script>
 
 </body>
 </html>

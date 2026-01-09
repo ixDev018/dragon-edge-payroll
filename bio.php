@@ -17,10 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
         al.clock_out,
         al.status,
         al.created_at,
+        al.updated_at,
         al.id
     FROM attendance_logs al
     JOIN employees e ON e.id = al.employee_id 
-    WHERE al.attendance_date = CURDATE()
+    WHERE DATE(al.created_at) = CURDATE()
     ORDER BY al.created_at DESC
     LIMIT 20
     ";
@@ -55,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
     exit;
 }
 
+
 // API: Get latest attendance scan (for real-time notifications)
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'get_latest') {
     header('Content-Type: application/json');
@@ -69,10 +71,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
         e.department,
         al.clock_in,
         al.clock_out,
-        al.updated_at
+        al.updated_at,
+        al.created_at
     FROM attendance_logs al
     JOIN employees e ON e.id = al.employee_id
-    WHERE al.attendance_date = CURDATE()
+    WHERE DATE(al.created_at) = CURDATE()
       AND (al.updated_at > ? OR al.created_at > ?)
     ORDER BY GREATEST(COALESCE(al.updated_at, '1970-01-01'), COALESCE(al.created_at, '1970-01-01')) DESC
     LIMIT 1
@@ -122,10 +125,11 @@ SELECT
     al.clock_out,
     al.status,
     al.created_at,
+    al.updated_at,
     al.id
 FROM attendance_logs al
 JOIN employees e ON e.id = al.employee_id 
-WHERE al.attendance_date = CURDATE()
+WHERE DATE(al.created_at) = CURDATE()
 ORDER BY al.created_at DESC
 LIMIT 20
 ";

@@ -8,9 +8,6 @@ $logs = [];
 $dbError = null;
 
 try {
-    // FIX: Completely adapted to your provided Table Schema
-    // 1. We use UNION ALL to split the single row (clock_in/clock_out) into two separate log entries for the list.
-    // 2. We JOIN on 'e.id' (bigint) instead of 'e.employee_id' (string) because attendance_logs.employee_id is a bigint.
     $query = "
         SELECT 
             e.employee_id AS emp_code,
@@ -60,11 +57,9 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance Logs | Dragon Edge Group</title>
     
-    <!-- Dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
-    <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     
@@ -114,6 +109,32 @@ try {
             color: #4facfe;
         }
 
+        /* Container for the top buttons */
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Style for the new Enroll Button (Green Gradient) */
+        .enroll-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .enroll-btn:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Existing Kiosk Button (Purple Gradient) */
         .kiosk-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -164,7 +185,6 @@ try {
 </head>
 <body>
 
-<!-- Assuming sidebar.php exists and handles the left navigation -->
 <?php include 'sidebar.php'; ?>
 
 <div class="main-content">
@@ -174,14 +194,19 @@ try {
             <i class="fas fa-fingerprint"></i>
             Attendance Logs
         </div>
-        <!-- Link to the Kiosk View -->
-        <a href="bio.php" target="_blank" class="kiosk-btn">
-            <i class="fas fa-external-link-alt"></i> Launch Kiosk
-        </a>
+        
+        <div class="header-actions">
+            <a href="enroll_fingerprint.php" class="enroll-btn">
+                <i class="fas fa-plus-circle"></i> Enroll Fingerprint
+            </a>
+
+            <a href="bio.php" target="_blank" class="kiosk-btn">
+                <i class="fas fa-external-link-alt"></i> Launch Kiosk
+            </a>
+        </div>
     </div>
 
     <div class="card">
-        <!-- Error Message Display -->
         <?php if ($dbError): ?>
             <div style="background:#fff5f5; border:1px solid #fc8181; color:#c53030; padding:15px; border-radius:6px; margin-bottom:20px; display: flex; align-items: center; gap: 10px;">
                 <i class="fas fa-exclamation-circle"></i>

@@ -49,7 +49,6 @@ function update_enrollment_status($conn, $employee_id, $status, $message) {
     return $stmt->execute();
 }
 
-// Process attendance
 function process_attendance($conn, $data) {
     $fingerprint_id = (int)($data['fingerprint_id'] ?? 0);
     $timestamp = $data['timestamp'] ?? date('Y-m-d H:i:s');
@@ -58,7 +57,7 @@ function process_attendance($conn, $data) {
     
     log_info("Processing attendance: FP_ID=$fingerprint_id, Time=$timestamp");
     
-    // Save raw attendance
+    // 1. Save to biometric_attendance_raw table
     $stmt = $conn->prepare("
         INSERT INTO biometric_attendance_raw 
         (fingerprint_id, device_id, scan_timestamp, is_admin, raw_data, created_at)
@@ -68,43 +67,141 @@ function process_attendance($conn, $data) {
     $stmt->bind_param("issis", $fingerprint_id, $device_id, $timestamp, $is_admin, $raw_json);
     
     if (!$stmt->execute()) {
-        log_error("Failed to save raw attendance");
+        log_error("Failed to save raw attendance: " . $stmt->error);
         return false;
     }
     
-    // Get employee
-    $stmt = $conn->prepare("SELECT * FROM employees WHERE fingerprint_id = ? AND is_active = 1");
+    // 2. Get employee from fingerprint_id
+    $stmt = $conn->prepare("
+        SELECT id, employee_id, first_name, last_name, department 
+        FROM employees 
+        WHERE fingerprint_id = ? AND is_active = 1
+    ");
     $stmt->bind_param("i", $fingerprint_id);
     $stmt->execute();
-    $employee = $stmt->get_result()->fetch_assoc();
+    $result = $stmt->get_result();
+    $employee = $result->fetch_assoc();
     
     if (!$employee) {
         log_error("Employee not found for fingerprint ID: $fingerprint_id");
         return false;
     }
     
-    $employee_id = $employee['id'];
+    $employee_db_id = $employee['id'];
     $employee_name = $employee['first_name'] . ' ' . $employee['last_name'];
-    log_info("Employee identified: $employee_name");
+    log_info("Employee identified: $employee_name (DB ID: $employee_db_id)");
     
-    // Process via stored procedure
-    try {
-        $stmt = $conn->prepare("CALL process_biometric_attendance(?, ?, ?)");
-        $stmt->bind_param("iss", $fingerprint_id, $device_id, $timestamp);
-        
-        if ($stmt->execute()) {
-            log_success("✓ Attendance processed for $employee_name");
-            return true;
+    // 3. Determine attendance date
+    $attendance_date = date('Y-m-d', strtotime($timestamp));
+    
+    // 4. Count total scans today to determine action
+    $stmt = $conn->prepare("
+        SELECT COUNT(*) as scan_count
+        FROM biometric_attendance_raw
+        WHERE fingerprint_id = ?
+        AND DATE(created_at) = CURDATE()
+    ");
+    $stmt->bind_param("i", $fingerprint_id);
+    $stmt->execute();
+    $count_result = $stmt->get_result()->fetch_assoc();
+    $scan_count = $count_result['scan_count'];
+    
+    // Odd scan = TIME IN, Even scan = TIME OUT
+    $is_time_in = ($scan_count % 2 == 1);
+    log_info("Scan count today: $scan_count → " . ($is_time_in ? "TIME IN" : "TIME OUT"));
+    
+    // 5. Check if attendance record exists for today
+    $stmt = $conn->prepare("
+        SELECT id, clock_in, clock_out 
+        FROM attendance_logs 
+        WHERE employee_id = ? 
+        AND attendance_date = ?
+        LIMIT 1
+    ");
+    $stmt->bind_param("is", $employee_db_id, $attendance_date);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $existing_log = $result->fetch_assoc();
+    
+    if ($is_time_in) {
+        // TIME IN
+        if ($existing_log) {
+            // Update existing record
+            $stmt = $conn->prepare("
+                UPDATE attendance_logs 
+                SET clock_in = ?, 
+                    status = 'present',
+                    updated_at = NOW()
+                WHERE id = ?
+            ");
+            $stmt->bind_param("si", $timestamp, $existing_log['id']);
+            
+            if ($stmt->execute()) {
+                log_success("✓ TIME IN updated for $employee_name at $timestamp");
+                return true;
+            } else {
+                log_error("Failed to update TIME IN: " . $stmt->error);
+                return false;
+            }
         } else {
-            log_error("Stored procedure failed");
-            return false;
+            // Create new record
+            $stmt = $conn->prepare("
+                INSERT INTO attendance_logs 
+                (employee_id, attendance_date, clock_in, status, created_at)
+                VALUES (?, ?, ?, 'present', NOW())
+            ");
+            $stmt->bind_param("iss", $employee_db_id, $attendance_date, $timestamp);
+            
+            if ($stmt->execute()) {
+                log_success("✓ TIME IN recorded for $employee_name at $timestamp");
+                return true;
+            } else {
+                log_error("Failed to insert TIME IN: " . $stmt->error);
+                return false;
+            }
         }
-    } catch (Exception $e) {
-        log_error("Exception: " . $e->getMessage());
-        return false;
+    } else {
+        // TIME OUT
+        if ($existing_log) {
+            // Update with clock_out
+            $stmt = $conn->prepare("
+                UPDATE attendance_logs 
+                SET clock_out = ?,
+                    status = 'present',
+                    updated_at = NOW()
+                WHERE id = ?
+            ");
+            $stmt->bind_param("si", $timestamp, $existing_log['id']);
+            
+            if ($stmt->execute()) {
+                log_success("✓ TIME OUT recorded for $employee_name at $timestamp");
+                return true;
+            } else {
+                log_error("Failed to update TIME OUT: " . $stmt->error);
+                return false;
+            }
+        } else {
+            // Edge case: TIME OUT without TIME IN
+            log_error("TIME OUT attempted without TIME IN for $employee_name");
+            
+            // Create record with only clock_out
+            $stmt = $conn->prepare("
+                INSERT INTO attendance_logs 
+                (employee_id, attendance_date, clock_out, status, created_at)
+                VALUES (?, ?, ?, 'incomplete', NOW())
+            ");
+            $stmt->bind_param("iss", $employee_db_id, $attendance_date, $timestamp);
+            
+            if ($stmt->execute()) {
+                log_success("✓ TIME OUT recorded (incomplete - no TIME IN) for $employee_name");
+                return true;
+            } else {
+                log_error("Failed to insert TIME OUT: " . $stmt->error);
+                return false;
+            }
+        }
     }
 }
-
 // Process enrollment
 function process_enrollment($conn, $data) {
     $employee_id = (int)($data['employee_id'] ?? 0);
@@ -279,6 +376,47 @@ $mqtt->subscribe('dragonedge/attendance/unknown', function ($topic, $message) us
     }
     echo "\n";
 }, 0);
+
+// Subscribe to fingerprint delete commands
+$mqtt->subscribe('dragonedge/fingerprint/delete', function ($topic, $message) use ($conn) {
+    $data = json_decode($message, true);
+    
+    if ($data['action'] === 'delete') {
+        $fingerprint_id = $data['fingerprint_id'] ?? 0;
+        log_info("🗑️  Delete request for Fingerprint ID: $fingerprint_id");
+        
+        // Log the deletion
+        $stmt = $conn->prepare("
+            INSERT INTO fingerprint_deletion_log 
+            (fingerprint_id, deleted_at, deleted_by) 
+            VALUES (?, NOW(), 'system')
+        ");
+        $stmt->bind_param("i", $fingerprint_id);
+        $stmt->execute();
+        
+        // Clear fingerprint_id from employees table
+        $stmt = $conn->prepare("
+            UPDATE employees 
+            SET fingerprint_id = NULL, updated_at = NOW() 
+            WHERE fingerprint_id = ?
+        ");
+        $stmt->bind_param("i", $fingerprint_id);
+        $stmt->execute();
+        
+        log_success("✓ Fingerprint ID $fingerprint_id removed from database");
+    }
+    
+    else if ($data['action'] === 'clear_all') {
+        log_info("🗑️  CLEAR ALL fingerprints request received");
+        
+        // Clear all fingerprint IDs
+        $conn->query("UPDATE employees SET fingerprint_id = NULL, updated_at = NOW()");
+        $conn->query("INSERT INTO fingerprint_deletion_log (fingerprint_id, deleted_at, deleted_by, notes) VALUES (0, NOW(), 'system', 'Bulk clear all')");
+        
+        log_success("✓ All fingerprint IDs cleared from database");
+    }
+}, 0);
+
     
     log_success("Subscribed to all topics");
     

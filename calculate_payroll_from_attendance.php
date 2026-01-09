@@ -56,17 +56,17 @@ if ($employee['shift_id']) {
 // Get attendance records for the period
 $stmt = $conn->prepare("
     SELECT 
-        DATE(created_at) as work_date,
+        attendance_date as work_date,   
         clock_in,
         clock_out,
         TIMESTAMPDIFF(MINUTE, clock_in, clock_out) as total_minutes,
-        DAYOFWEEK(DATE(created_at)) as day_of_week
+        DAYOFWEEK(attendance_date) as day_of_week
     FROM attendance_logs
     WHERE employee_id = ?
-      AND DATE(created_at) BETWEEN ? AND ?
+      AND attendance_date BETWEEN ? AND ?  
       AND clock_in IS NOT NULL
       AND clock_out IS NOT NULL
-    ORDER BY created_at ASC
+    ORDER BY attendance_date ASC
 ");
 
 $stmt->bind_param("iss", $employee_id, $start_date, $end_date);
